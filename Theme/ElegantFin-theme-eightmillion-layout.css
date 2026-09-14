@@ -1,0 +1,29 @@
+/* =========================================================
+   Page-specific layout corrections
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    /* Search page needs to clear the fixed Modern app bar. */
+    .layout-desktop #searchPage {
+        padding-top: 8.25rem !important;
+    }
+
+    /*
+       Episode hero/content should align with the normal page
+       side padding rather than the older 1500px / 6rem cap.
+    */
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContainer,
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContent {
+        width: calc(100vw - (var(--sidePadding) * 2)) !important;
+        max-width: none !important;
+    }
+
+    /* Reduce the oversized desktop episode top gap. */
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContainer {
+        margin: clamp(1.5rem, 3vh, 3rem) auto 2rem !important;
+    }
+}
