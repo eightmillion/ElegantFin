@@ -1,0 +1,105 @@
+/* =========================================================
+   Movie detail — mobile redesign
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) {
+        --movie-logo-height: 15rem;
+        --movie-logo-reserve: 12rem;
+        --movie-logo-gap: .5rem;
+    }
+
+    /* Keep a cinematic hero without giving the backdrop the whole screen. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .itemBackdrop {
+        height: clamp(11rem, 30vh, 16rem) !important;
+    }
+
+    /* Center movie logos and give unusually padded/tall artwork room to breathe. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    > .detailLogo[style*="url("] {
+        left: 50% !important;
+        right: auto !important;
+        width: 24rem !important;
+        max-width: 96vw !important;
+        height: var(--movie-logo-height) !important;
+        margin: 0 !important;
+        transform: translateX(-50%) !important;
+        translate: none !important;
+        background-position: center !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+
+    /* Reserve a consistent logo region independent of the artwork's aspect ratio. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"]):has(
+        > .detailLogo[style*="url("]
+    )
+    .nameContainer {
+        padding-top: calc(var(--movie-logo-reserve) + var(--movie-logo-gap)) !important;
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        gap: 0 !important;
+    }
+
+    /* Do not show Jellyfin's text title underneath a real logo. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"]):has(
+        > .detailLogo[style*="url("]
+    )
+    .nameContainer > .itemName,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"]):has(
+        > .detailLogo[style*="url("]
+    )
+    .nameContainer > .parentName {
+        display: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .itemMiscInfo-primary {
+        margin-top: 0 !important;
+    }
+
+    /* Movie action layout. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .mainDetailButtons {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        width: 100% !important;
+        gap: .65rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .mainDetailButtons .btnPlay {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 3.2rem !important;
+        margin: 1rem 0 .25rem !important;
+        padding: 0 1rem !important;
+        border-radius: .7rem !important;
+        border: 1px solid rgba(255,255,255,.14) !important;
+        background: rgba(255,255,255,.08) !important;
+        color: rgba(255,255,255,.95) !important;
+        box-shadow: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .mainDetailButtons > :not(.btnPlay) {
+        justify-self: center !important;
+        margin: 0 !important;
+    }
+}
