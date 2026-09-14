@@ -1,13 +1,10 @@
 /* =========================================================
    Episode title — season / episode / title split
    Requires Scripts/ElegantFin-episode-title.js
+   Desktop/mobile only; leave Jellyfin TV layout untouched.
    ========================================================= */
 
-/*
-   Season and episode share the first row; the episode title
-   spans the full second row. Keep the generated heading rules
-   explicit because Jellyfin/ElegantFin also style .itemName.
-*/
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit {
     display: grid !important;
@@ -23,6 +20,7 @@
     text-align: left !important;
 }
 
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit
 > .elegantfinEpisodeSeason {
@@ -37,6 +35,7 @@
     text-align: left !important;
 }
 
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit
 > .elegantfinEpisodeNumber {
@@ -51,6 +50,7 @@
     text-align: left !important;
 }
 
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit
 > .elegantfinEpisodeName {
@@ -64,34 +64,38 @@
     text-align: left !important;
 }
 
-/* Season / episode metadata */
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeSeason,
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeNumber {
     font-size: 1.4rem !important;
     line-height: 1.4 !important;
 }
 
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeSeason {
     font-weight: 600 !important;
     color: rgba(255,255,255,.65) !important;
 }
 
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeSeason a {
     color: inherit !important;
     font: inherit !important;
 }
 
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeNumber {
     font-weight: 500 !important;
     color: rgba(255,255,255,.55) !important;
 }
 
-/* Episode name */
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeName {
     font-size: clamp(2.2rem, 3vw, 3.25rem) !important;
