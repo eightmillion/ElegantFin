@@ -1,0 +1,74 @@
+/* =========================================================
+   Person detail — mobile redesign
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+    /* Person pages do not need the normal mobile backdrop reservation. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .itemBackdrop {
+        height: 0 !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Let the portrait use the full available mobile width. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailImageContainer {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailImageContainer .card {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailImageContainer .cardBox,
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailImageContainer .cardScalable {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Keep the person action buttons centered as a compact group. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .mainDetailButtons {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: .75rem !important;
+        margin: .5rem 0 1rem !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .mainDetailButtons .detailButton {
+        margin: 0 !important;
+    }
+
+    /* Jellyfin toggles detail-clamp-text when expanding the biography;
+       pin the typography so the text size does not jump. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .overview {
+        font-size: 1rem !important;
+        line-height: 1.45 !important;
+    }
+}
