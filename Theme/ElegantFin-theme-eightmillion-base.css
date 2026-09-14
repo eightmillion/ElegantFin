@@ -1,0 +1,275 @@
+@import url("./ElegantFin-theme-nightly.css");
+
+:root {
+    /* Gradient points */
+    --darkerGradientPoint: hsla(0, 0%, 0%, 1);
+    --darkerGradientPointAlpha: hsla(0, 0%, 0%, 0.85);
+
+    --lighterGradientPoint: hsla(0, 0%, 7%, 1);
+    --lighterGradientPointAlpha: hsla(0, 0%, 7%, 0.85);
+
+    /* Header / drawer */
+    --headerColor: hsla(0, 0%, 7%, 0.8);
+    --drawerColor: hsla(0, 0%, 7%, 0.9);
+
+    --headerColorGradient:
+        linear-gradient(
+            180deg,
+            hsla(0, 0%, 7%, 0.95) 30%,
+            55%,
+            transparent 90%
+        );
+
+    /* Borders */
+    --borderColor: hsla(0, 0%, 32%, 0);
+    --darkerBorderColor: hsla(0, 0%, 22%, 1);
+    --lighterBorderColor: hsla(0, 0%, 100%, 0.2);
+
+    /* Selectors */
+    --selectorBackgroundColor: hsla(0, 0%, 27%, 1);
+    --selectorBackgroundColorAlpha: hsla(0, 0%, 27%, 0.5);
+
+    /* Buttons */
+    --btnMiniPlayColor: hsla(0, 0%, 0%, 0.8);
+    --btnMiniPlayBorderColor: hsla(0, 0%, 30%, 0.8);
+
+    --dimTextColor: #d1d1d1;
+}
+
+.visualCardBox {
+    border-radius: 0 !important;
+}
+
+.visualCardBox,
+.paperList {
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+.layout-mobile .cardScalable,
+.cardScalable {
+    border: none !important;
+}
+
+.cardScalable {
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.section0 > .emby-scroller > .itemsContainer > .card {
+    --effectiveWidth: calc((139vw - (var(--sidePadding) * 2)));
+}
+
+.itemDetailsGroup {
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.detail-clamp-text {
+    font-size: 1.1em;
+}
+
+.trackSelections {
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0.4em !important;
+    background-color: transparent !important;
+}
+
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea {
+    background-color: #212121 !important;
+}
+
+.commentsSection {
+    padding-left: var(--sidePadding) !important;
+}
+
+.commentsSection > button,
+.commentsSection > div > button {
+    background-color: var(--textColor) !important;
+    color: black !important;
+    border-radius: var(--smallRadius) !important;
+    border-color: var(--borderColor) !important;
+    height: 3em !important;
+    min-width: 10em !important;
+    margin-right: .5em !important;
+    flex-direction: row !important;
+}
+
+.commentsSection > div > textarea {
+    width: calc(100% - var(--sidePadding)) !important;
+}
+
+.layout-mobile .itemBackdrop {
+    height: 70vh !important;
+}
+
+.layout-mobile .detailLogo {
+    top: 68vh !important;
+}
+
+.commentsDisplay {
+    padding-right: var(--sidePadding) !important;
+}
+
+.listItemImage {
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+/* .detailRibbon:has(.portraitCard .folder) {
+    min-height: unset !important;
+} */
+
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea {
+    border-radius: unset !important;
+}
+
+.layout-mobile .detailImageContainer .card {
+    margin-top: -550% !important;
+}
+
+.layout-mobile .card {
+   /* --cardWidth: 20vw!important; */
+}
+
+.sectionTabs .emby-tab-button {
+    --largeRadius: 4px;
+}
+
+.btnPlay.detailButton {
+    border-radius: var(--smallRadius);
+}
+
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator,
+.playedIndicator {
+    background: #333;
+    color: #fff !important;
+}
+
+.starIcon {
+    background: radial-gradient(circle, #ffd700 0%, #ffed4e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: -.125em;
+    transform: translateY(-.02em);
+}
+
+.listItemImageButton {
+    --playButtonMargin: .6em;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: var(--playButtonMargin);
+    margin-right: var(--playButtonMargin);
+    font-size: 100%;
+}
+
+/* =========================================================
+   Jellyfin 12 Modern desktop app bar
+   ========================================================= */
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root.MuiAppBar-positionFixed {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    overflow: visible !important;
+    z-index: 1100 !important;
+}
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root .MuiToolbar-root {
+    position: relative;
+    min-height: 3.4em;
+    padding-left: .75em;
+    padding-right: .25em !important;
+    gap: .15em;
+}
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root {
+    color: rgba(255,255,255,.78) !important;
+}
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root a,
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root button {
+    color: rgba(255,255,255,.78) !important;
+    border-radius: .7em;
+    transition:
+        background-color .18s ease,
+        color .18s ease,
+        transform .18s ease;
+}
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root a:hover,
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root button:hover {
+    color: rgba(255,255,255,.95) !important;
+    background: rgba(255,255,255,.08) !important;
+}
+
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root a.MuiButton-textPrimary.MuiButton-colorPrimary {
+    background: rgba(255,255,255,.07) !important;
+    color: rgba(255,255,255,.95) !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root a.MuiButton-sizeLarge[href="#/"] {
+    color: rgba(255,255,255,.95) !important;
+    font-size: 1.4em !important;
+    font-weight: 700 !important;
+    letter-spacing: .015em;
+    margin-right: .9em !important;
+}
+
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root .MuiToolbar-root > :last-child {
+    margin-right: 0 !important;
+}
+
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root .MuiToolbar-root > :last-child button,
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root .MuiToolbar-root > :last-child .MuiIconButton-root {
+    padding: .25em !important;
+}
+
+.layout-desktop:not(.dashboardDocument) .mainAnimatedPage {
+    padding-top: .6em;
+}
+
+/* Let detail-page backdrops extend underneath the fixed Modern desktop app bar. */
+.layout-desktop body.libraryDocument:has(.itemDetailPage) main {
+    margin-top: -53px !important;
+    padding-top: 53px !important;
+}
+
+/* Continuous fade behind Modern desktop navigation. */
+.layout-desktop body.libraryDocument::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8em;
+    z-index: 1099;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.68) 0%,
+        rgba(0,0,0,.50) 30%,
+        rgba(0,0,0,.25) 58%,
+        rgba(0,0,0,.08) 78%,
+        transparent 100%
+    );
+}

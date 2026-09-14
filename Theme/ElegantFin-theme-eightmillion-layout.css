@@ -1,0 +1,91 @@
+/* =========================================================
+   Page-specific layout corrections
+   ========================================================= */
+
+/* Keep indicator glyphs readable on dark indicator backgrounds. */
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator,
+.playedIndicator {
+    color: #fff !important;
+}
+
+/* Episode backdrop treatment — desktop/mobile only. */
+:is(.layout-desktop, .layout-mobile)
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"]) {
+    background:
+        linear-gradient(
+            rgba(0,0,0,.55) 65%,
+            rgba(0,0,0,.25) 85%,
+            transparent 100%
+        ) !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+body:has(
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+)
+.backgroundContainer.withBackdrop {
+    opacity: .55 !important;
+}
+
+/* Season pages can keep more of the artwork visible than the upstream treatment. */
+:is(.layout-desktop, .layout-mobile)
+#itemDetailPage:has(.btnPlaystate[data-type="Season"]) {
+    background:
+        linear-gradient(
+            rgba(0,0,0,.35) 65%,
+            rgba(0,0,0,.15) 85%,
+            transparent 100%
+        ) !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+body:has(
+    #itemDetailPage:has(.btnPlaystate[data-type="Season"])
+)
+.backgroundContainer.withBackdrop {
+    opacity: .65 !important;
+}
+
+@media (min-width: 900px) {
+
+    /* Search page needs to clear the fixed Modern app bar. */
+    .layout-desktop #searchPage {
+        padding-top: 8.25rem !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContainer {
+        width: calc(100vw - (var(--sidePadding) * 2)) !important;
+        max-width: none !important;
+        margin: clamp(1.5rem, 3vh, 3rem) auto 2rem !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContent {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContent > .detailSection {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        grid-template-columns:
+            minmax(360px, 44%)
+            minmax(0, 1fr) !important;
+        column-gap: var(--episode-hero-gap) !important;
+        box-sizing: border-box !important;
+    }
+}

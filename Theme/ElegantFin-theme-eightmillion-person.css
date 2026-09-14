@@ -1,0 +1,271 @@
+/* =========================================================
+   Person detail — mobile redesign
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+    /* Person pages do not need the normal mobile backdrop reservation. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .itemBackdrop {
+        height: 0 !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Let the portrait use the full available mobile width. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailImageContainer {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailImageContainer .card {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailImageContainer .cardBox,
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailImageContainer .cardScalable {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Keep the person action buttons centered as a compact group. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .mainDetailButtons {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: .75rem !important;
+        margin: .5rem 0 1rem !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .mainDetailButtons .detailButton {
+        margin: 0 !important;
+    }
+
+    /* Jellyfin toggles detail-clamp-text when expanding the biography;
+       pin the typography so the text size does not jump. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .overview {
+        font-size: 1rem !important;
+        line-height: 1.45 !important;
+    }
+}
+
+/* =========================================================
+   Person detail — desktop redesign
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person) {
+        --person-sidebar: 320px;
+        --person-gap: clamp(3rem, 5vw, 5.5rem);
+    }
+
+    /* Person pages do not need ElegantFin's large empty hero reservation. */
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .itemBackdrop {
+        display: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailPageWrapperContainer {
+        width: calc(100vw - 4rem) !important;
+        max-width: 1650px !important;
+        margin: 4.5rem auto 3rem !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailPagePrimaryContainer {
+        display: grid !important;
+        grid-template-columns:
+            var(--person-sidebar)
+            minmax(0, 1fr) !important;
+        column-gap: var(--person-gap) !important;
+        align-items: start !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Hide the legacy desktop portrait; use the portrait inside infoWrapper instead. */
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailPagePrimaryContainer > .detailImageContainer {
+        display: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailRibbon {
+        grid-column: 1 !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailRibbon .infoWrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Reuse Jellyfin's portrait that is normally mobile-only. */
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .infoWrapper > .detailImageContainer.hide-desktop.hide-tv {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 1.25rem !important;
+        padding: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .infoWrapper > .detailImageContainer .card {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .infoWrapper > .detailImageContainer .cardBox,
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .infoWrapper > .detailImageContainer .cardScalable {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .nameContainer {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .nameContainer > .itemName {
+        margin: 0 0 1rem !important;
+        font-size: clamp(2.8rem, 3.4vw, 4rem) !important;
+        line-height: 1.05 !important;
+        font-weight: 600 !important;
+        letter-spacing: -.025em !important;
+        color: rgba(255,255,255,.98) !important;
+        text-align: left !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .mainDetailButtons {
+        display: flex !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        gap: .75rem !important;
+        margin: .5rem 0 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Biography / details occupy the right profile column. */
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailPagePrimaryContent {
+        grid-column: 2 !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailPagePrimaryContent > .detailSection {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .overview {
+        width: 100% !important;
+        max-width: 65rem !important;
+        margin: 0 0 1.25rem !important;
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Let the filmography use the wider profile layout as well. */
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailPageSecondaryContainer {
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+        padding-left:
+            calc(var(--person-sidebar) + var(--person-gap)) !important;
+        padding-right: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailPageSecondaryContainer .verticalSection,
+    .layout-desktop
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailPageSecondaryContainer .itemsContainer {
+        width: 100% !important;
+        max-width: none !important;
+    }
+}
