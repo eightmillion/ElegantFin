@@ -4,18 +4,19 @@
    ========================================================= */
 
 /*
-   Use grid rather than relying on inherited flex behavior.
-   ElegantFin/Jellyfin has several itemName rules, so this
-   intentionally targets the generated split heading strongly.
+   Season and episode share the first row; the episode title
+   spans the full second row. Keep the generated heading rules
+   explicit because Jellyfin/ElegantFin also style .itemName.
 */
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    grid-auto-flow: row !important;
-    align-items: start !important;
+    grid-template-columns: auto auto minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: .8rem !important;
+    row-gap: .4rem !important;
+    align-items: baseline !important;
     justify-items: start !important;
-    gap: 0 !important;
     width: 100% !important;
     margin: 0 0 1.25rem !important;
     padding: 0 !important;
@@ -24,28 +25,58 @@
 
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit
-> .elegantfinEpisodeSeason,
+> .elegantfinEpisodeSeason {
+    display: block !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+}
+
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit
-> .elegantfinEpisodeNumber,
+> .elegantfinEpisodeNumber {
+    display: block !important;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+}
+
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit
 > .elegantfinEpisodeName {
     display: block !important;
-    grid-column: 1 !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
     width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
     padding: 0 !important;
     text-align: left !important;
 }
 
-/* Season */
+/* Season / episode metadata */
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+.elegantfinEpisodeSeason,
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+.elegantfinEpisodeNumber {
+    font-size: 1.4rem !important;
+    line-height: 1.4 !important;
+}
+
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeSeason {
-    margin: 0 0 .15rem !important;
-    font-size: 1.05rem !important;
-    line-height: 1.15 !important;
-    font-weight: 650 !important;
-    color: rgba(255,255,255,.62) !important;
+    font-weight: 600 !important;
+    color: rgba(255,255,255,.65) !important;
 }
 
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
@@ -54,20 +85,15 @@
     font: inherit !important;
 }
 
-/* Episode number */
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeNumber {
-    margin: 0 0 .65rem !important;
-    font-size: 1rem !important;
-    line-height: 1.15 !important;
-    font-weight: 550 !important;
-    color: rgba(255,255,255,.48) !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,.55) !important;
 }
 
 /* Episode name */
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 .elegantfinEpisodeName {
-    margin: 0 !important;
     font-size: clamp(2.2rem, 3vw, 3.25rem) !important;
     line-height: 1.04 !important;
     font-weight: 400 !important;
@@ -80,19 +106,6 @@
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .nameContainer > h3.itemName.elegantfinEpisodeTitleSplit {
         margin-bottom: 1rem !important;
-    }
-
-    .layout-mobile
-    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
-    .elegantfinEpisodeSeason {
-        font-size: 1rem !important;
-    }
-
-    .layout-mobile
-    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
-    .elegantfinEpisodeNumber {
-        margin-bottom: .55rem !important;
-        font-size: .95rem !important;
     }
 
     .layout-mobile
