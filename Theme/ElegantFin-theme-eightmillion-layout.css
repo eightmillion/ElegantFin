@@ -2,6 +2,14 @@
    Page-specific layout corrections
    ========================================================= */
 
+/* Keep indicator glyphs readable on dark indicator backgrounds. */
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator,
+.playedIndicator {
+    color: #fff !important;
+}
+
 /* Episode backdrop treatment */
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"]) {
     background:
