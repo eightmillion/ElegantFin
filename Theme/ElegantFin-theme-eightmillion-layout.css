@@ -10,7 +10,8 @@
     color: #fff !important;
 }
 
-/* Episode backdrop treatment */
+/* Episode backdrop treatment — desktop/mobile only. */
+:is(.layout-desktop, .layout-mobile)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"]) {
     background:
         linear-gradient(
@@ -20,6 +21,7 @@
         ) !important;
 }
 
+:is(.layout-desktop, .layout-mobile)
 body:has(
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 )
@@ -34,10 +36,7 @@ body:has(
         padding-top: 8.25rem !important;
     }
 
-    /*
-       Episode hero should align with the normal page side
-       padding rather than the older 1500px / 6rem cap.
-    */
+    .layout-desktop
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .detailPagePrimaryContainer {
         width: calc(100vw - (var(--sidePadding) * 2)) !important;
@@ -45,11 +44,6 @@ body:has(
         margin: clamp(1.5rem, 3vh, 3rem) auto 2rem !important;
     }
 
-    /*
-       The lower content is a child of the hero grid. It must
-       span both hero columns; viewport sizing here causes the
-       right column to overflow the page.
-    */
     .layout-desktop
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .detailPagePrimaryContent {
