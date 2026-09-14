@@ -1,0 +1,68 @@
+/* =========================================================
+   Episode title — season / episode / title split
+   Requires Scripts/ElegantFin-episode-title.js
+   ========================================================= */
+
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+.nameContainer > .itemName.elegantfinEpisodeTitleSplit {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0 !important;
+}
+
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+.elegantfinEpisodeSeason {
+    display: block !important;
+    margin: 0 0 .25rem !important;
+    font-size: 1.05rem !important;
+    line-height: 1.2 !important;
+    font-weight: 550 !important;
+    color: rgba(255,255,255,.60) !important;
+}
+
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+.elegantfinEpisodeSeason a {
+    color: inherit !important;
+    font: inherit !important;
+}
+
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+.elegantfinEpisodeNumber {
+    display: block !important;
+    margin: 0 0 .35rem !important;
+    font-size: 1.15rem !important;
+    line-height: 1.2 !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,.74) !important;
+}
+
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+.elegantfinEpisodeName {
+    display: block !important;
+    width: 100% !important;
+    font-size: clamp(2rem, 2.7vw, 2.9rem) !important;
+    line-height: 1.08 !important;
+    font-weight: 450 !important;
+    color: rgba(255,255,255,.96) !important;
+}
+
+@media (max-width: 899px) {
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .elegantfinEpisodeSeason {
+        font-size: .95rem !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .elegantfinEpisodeNumber {
+        font-size: 1.05rem !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .elegantfinEpisodeName {
+        font-size: clamp(1.8rem, 7vw, 2.35rem) !important;
+    }
+}
