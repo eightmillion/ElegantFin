@@ -7,21 +7,43 @@
     .layout-mobile
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) {
         --movie-logo-height: 15rem;
-        --movie-logo-reserve: 12rem;
-        --movie-logo-gap: .5rem;
+        --movie-logo-reserve: 0rem;
+        --movie-logo-gap: 0rem;
     }
 
-    /* Keep a cinematic hero without giving the backdrop the whole screen. */
+    /*
+       Let the backdrop behave like a full hero: extend it behind
+       the transparent app bar, keep it visible through the upper
+       half of the page, then fade it out near the bottom.
+    */
     .layout-mobile
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     .itemBackdrop {
-        height: clamp(11rem, 30vh, 16rem) !important;
+        margin-top: -48px !important;
+        height: calc(clamp(26rem, 62vh, 34rem) + 48px) !important;
+        -webkit-mask:
+            linear-gradient(
+                to bottom,
+                #000 0%,
+                #000 78%,
+                rgba(0,0,0,.75) 88%,
+                transparent 100%
+            ) !important;
+        mask:
+            linear-gradient(
+                to bottom,
+                #000 0%,
+                #000 78%,
+                rgba(0,0,0,.75) 88%,
+                transparent 100%
+            ) !important;
     }
 
-    /* Center movie logos and give unusually padded/tall artwork room to breathe. */
+    /* Center movie logos and place them higher in the hero. */
     .layout-mobile
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     > .detailLogo[style*="url("] {
+        top: 34vh !important;
         left: 50% !important;
         right: auto !important;
         width: 24rem !important;
@@ -35,7 +57,7 @@
         background-repeat: no-repeat !important;
     }
 
-    /* Reserve a consistent logo region independent of the artwork's aspect ratio. */
+    /* Keep normal page flow tight underneath the clear logo. */
     .layout-mobile
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"]):has(
         > .detailLogo[style*="url("]
