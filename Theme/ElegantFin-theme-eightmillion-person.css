@@ -100,6 +100,8 @@
         width: calc(100vw - 4rem) !important;
         max-width: 1650px !important;
         margin: 4.5rem auto 3rem !important;
+        background: none !important;
+        background-image: none !important;
     }
 
     .layout-desktop
