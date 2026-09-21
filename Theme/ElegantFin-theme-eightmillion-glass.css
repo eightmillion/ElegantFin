@@ -1,0 +1,174 @@
+/* =========================================================
+   Glass surfaces — mobile drawer + shared dialogs
+   ========================================================= */
+
+/* Modern mobile navigation drawer. */
+.layout-mobile .MuiDrawer-paper {
+    background: rgba(10,10,10,.50) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-right: 1px solid rgba(255,255,255,.08) !important;
+    box-shadow:
+        1px 0 0 rgba(255,255,255,.04),
+        12px 0 32px rgba(0,0,0,.35) !important;
+}
+
+/* Soften the page scrim behind the glass drawer. */
+.layout-mobile .MuiDrawer-root .MuiBackdrop-root {
+    background: rgba(0,0,0,.28) !important;
+}
+
+/* Neutralize Jellyfin's purple selected-drawer treatment. */
+.layout-mobile
+.MuiDrawer-paper
+.MuiListItemButton-root.Mui-selected {
+    background: rgba(255,255,255,.14) !important;
+    color: #fff !important;
+}
+
+.layout-mobile
+.MuiDrawer-paper
+.MuiListItemButton-root.Mui-selected:hover {
+    background: rgba(255,255,255,.20) !important;
+}
+
+.layout-mobile
+.MuiDrawer-paper
+.MuiListItemButton-root.Mui-selected
+.MuiListItemIcon-root {
+    color: #fff !important;
+}
+
+/* =========================================================
+   Shared dialog glass — desktop + mobile
+   ========================================================= */
+
+:is(.layout-desktop, .layout-mobile)
+.formDialog,
+:is(.layout-desktop, .layout-mobile)
+.dialog,
+:is(.layout-desktop, .layout-mobile)
+.selectionDialog,
+:is(.layout-desktop, .layout-mobile)
+.actionSheet,
+:is(.layout-desktop, .layout-mobile)
+.promptDialog {
+    background: rgba(10,10,10,0) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255,255,255,.08) !important;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,.05),
+        0 24px 60px rgba(0,0,0,.38) !important;
+    color: rgba(255,255,255,.94) !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.formDialogHeader,
+:is(.layout-desktop, .layout-mobile)
+.dialogHeader {
+    background: rgba(255,255,255,.02) !important;
+    border-bottom: 1px solid rgba(255,255,255,.07) !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.formDialogFooter,
+:is(.layout-desktop, .layout-mobile)
+.dialogFooter {
+    background:
+        linear-gradient(
+            to top,
+            rgba(10,10,10,.58) 0%,
+            rgba(10,10,10,.38) 65%,
+            transparent 100%
+        ) !important;
+    border-top: 1px solid rgba(255,255,255,.06) !important;
+}
+
+/* =========================================================
+   Identify dialog
+   ========================================================= */
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .formDialogHeader {
+    min-height: 3.5rem !important;
+    padding: .65rem .75rem !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .formDialogHeaderTitle {
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,.96) !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .dialogContentInner {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 48rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .popupIdentifyForm {
+    width: 100% !important;
+    max-width: 44rem !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .fieldDescription,
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .popupIdentifyForm > p {
+    color: rgba(255,255,255,.72) !important;
+    line-height: 1.45 !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .emby-input,
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog input[is="emby-input"] {
+    background: rgba(255,255,255,.065) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    border-radius: .7rem !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transition:
+        background-color .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .emby-input:focus,
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog input[is="emby-input"]:focus {
+    background: rgba(255,255,255,.09) !important;
+    border-color: rgba(255,255,255,.38) !important;
+    box-shadow:
+        0 0 0 2px rgba(255,255,255,.08) !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .button-submit {
+    min-height: 2.8rem !important;
+    padding: .55rem 1.4rem !important;
+    background: rgba(255,255,255,.12) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    border-radius: .7rem !important;
+    box-shadow: none !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+.identifyDialog .button-submit:hover {
+    background: rgba(255,255,255,.18) !important;
+}
+
+/* Desktop dialogs remain floating panels; mobile keeps the fullscreen shape. */
+.layout-desktop .identifyDialog {
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+}
