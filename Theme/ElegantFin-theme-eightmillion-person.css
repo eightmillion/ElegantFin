@@ -44,22 +44,45 @@
         max-width: none !important;
     }
 
+    /* Preserve a small frame around the headshot. */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .infoWrapper > .detailImageContainer {
+        box-sizing: border-box !important;
+        padding: .5rem !important;
+    }
+
+    /*
+       Let the ribbon span the full page so the action group is centered
+       relative to the viewport rather than a narrower inherited column.
+    */
+    .layout-mobile
+    #itemDetailPage:has(.detailImageContainer .person)
+    .detailRibbon {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     /* Keep the person action buttons centered as a compact group. */
     .layout-mobile
     #itemDetailPage:has(.detailImageContainer .person)
     .mainDetailButtons {
+        position: static !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
-        gap: .75rem !important;
+        max-width: none !important;
+        gap: 1rem !important;
         margin: .5rem 0 1rem !important;
         padding: 0 !important;
     }
 
     .layout-mobile
     #itemDetailPage:has(.detailImageContainer .person)
-    .mainDetailButtons .detailButton {
+    .mainDetailButtons > * {
         margin: 0 !important;
     }
 
