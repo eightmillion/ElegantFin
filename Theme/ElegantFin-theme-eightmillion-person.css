@@ -6,7 +6,10 @@
 
     /* Person pages do not need the normal mobile backdrop reservation. */
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .itemBackdrop {
         height: 0 !important;
         min-height: 0 !important;
@@ -15,7 +18,10 @@
 
     /* Let the portrait use the full available mobile width. */
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailImageContainer {
         width: 100% !important;
         max-width: none !important;
@@ -24,7 +30,10 @@
     }
 
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailImageContainer .card {
         display: block !important;
         position: relative !important;
@@ -35,10 +44,16 @@
     }
 
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailImageContainer .cardBox,
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailImageContainer .cardScalable {
         width: 100% !important;
         max-width: none !important;
@@ -46,7 +61,10 @@
 
     /* Preserve a small frame around the headshot. */
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .infoWrapper > .detailImageContainer {
         box-sizing: border-box !important;
         padding: .5rem !important;
@@ -57,7 +75,10 @@
        relative to the viewport rather than a narrower inherited column.
     */
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailRibbon {
         width: 100% !important;
         max-width: none !important;
@@ -67,7 +88,10 @@
 
     /* Keep the person action buttons centered as a compact group. */
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .mainDetailButtons {
         position: static !important;
         display: flex !important;
@@ -81,7 +105,10 @@
     }
 
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .mainDetailButtons > * {
         margin: 0 !important;
     }
@@ -89,7 +116,10 @@
     /* Jellyfin toggles detail-clamp-text when expanding the biography;
        pin the typography so the text size does not jump. */
     .layout-mobile
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .overview {
         font-size: 1rem !important;
         line-height: 1.45 !important;
@@ -103,14 +133,20 @@
 @media (min-width: 900px) {
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person) {
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+) {
         --person-sidebar: 320px;
         --person-gap: clamp(3rem, 5vw, 5.5rem);
     }
 
     /* Person pages do not need ElegantFin's large empty hero reservation. */
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .itemBackdrop {
         display: none !important;
         height: 0 !important;
@@ -118,7 +154,10 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailPageWrapperContainer {
         width: calc(100vw - 4rem) !important;
         max-width: 1650px !important;
@@ -128,7 +167,10 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailPagePrimaryContainer {
         display: grid !important;
         grid-template-columns:
@@ -144,13 +186,19 @@
 
     /* Hide the legacy desktop portrait; use the portrait inside infoWrapper instead. */
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailPagePrimaryContainer > .detailImageContainer {
         display: none !important;
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailRibbon {
         grid-column: 1 !important;
         position: static !important;
@@ -163,7 +211,10 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailRibbon .infoWrapper {
         display: flex !important;
         flex-direction: column !important;
@@ -174,7 +225,10 @@
 
     /* Reuse Jellyfin's portrait that is normally mobile-only. */
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .infoWrapper > .detailImageContainer.hide-desktop.hide-tv {
         display: block !important;
         width: 100% !important;
@@ -184,7 +238,10 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .infoWrapper > .detailImageContainer .card {
         position: relative !important;
         top: auto !important;
@@ -198,17 +255,26 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .infoWrapper > .detailImageContainer .cardBox,
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .infoWrapper > .detailImageContainer .cardScalable {
         width: 100% !important;
         max-width: none !important;
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .nameContainer {
         display: block !important;
         width: 100% !important;
@@ -218,7 +284,10 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .nameContainer > .itemName {
         margin: 0 0 1rem !important;
         font-size: clamp(2.8rem, 3.4vw, 4rem) !important;
@@ -230,7 +299,10 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .mainDetailButtons {
         display: flex !important;
         justify-content: flex-start !important;
@@ -242,7 +314,10 @@
 
     /* Biography / details occupy the right profile column. */
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailPagePrimaryContent {
         grid-column: 2 !important;
         position: static !important;
@@ -253,7 +328,10 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailPagePrimaryContent > .detailSection {
         display: block !important;
         width: 100% !important;
@@ -263,7 +341,10 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .overview {
         width: 100% !important;
         max-width: 65rem !important;
@@ -274,7 +355,10 @@
 
     /* Let the filmography use the wider profile layout as well. */
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailPageSecondaryContainer {
         width: 100% !important;
         max-width: none !important;
@@ -285,10 +369,16 @@
     }
 
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailPageSecondaryContainer .verticalSection,
     .layout-desktop
-    #itemDetailPage:has(.detailImageContainer .person)
+    #itemDetailPage:is(
+    :has(.detailImageContainer .person),
+    :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
+)
     .detailPageSecondaryContainer .itemsContainer {
         width: 100% !important;
         max-width: none !important;
