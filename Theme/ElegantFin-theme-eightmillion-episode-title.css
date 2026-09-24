@@ -118,3 +118,19 @@
         font-size: clamp(1.9rem, 7vw, 2.4rem) !important;
     }
 }
+
+
+/* Episode series logo navigation — desktop/mobile only. */
+:is(.layout-desktop, .layout-mobile)
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+> .detailLogo.elegantfinClickableSeriesLogo {
+    cursor: pointer !important;
+}
+
+:is(.layout-desktop, .layout-mobile)
+#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+> .detailLogo.elegantfinClickableSeriesLogo:focus-visible {
+    outline: 2px solid rgba(255,255,255,.9) !important;
+    outline-offset: .35rem !important;
+    border-radius: .35rem !important;
+}
