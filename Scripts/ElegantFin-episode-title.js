@@ -1,5 +1,6 @@
 (() => {
-    if (window.__elegantFinEpisodeTitleSplitter) return;
+    if (window.__elegantFinEpisodeEnhancementsV2) return;
+    window.__elegantFinEpisodeEnhancementsV2 = true;
     window.__elegantFinEpisodeTitleSplitter = true;
 
     const supportedLayout = () => {
@@ -137,7 +138,8 @@
     };
 
     const run = () => {
-        document.querySelectorAll('.itemDetailPage').forEach((page) => {
+        const pages = new Set(document.querySelectorAll('#itemDetailPage, .itemDetailPage'));
+        pages.forEach((page) => {
             if (supportedLayout()) {
                 splitEpisodeTitle(page);
                 makeEpisodeLogoClickable(page);
