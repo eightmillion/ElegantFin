@@ -72,12 +72,78 @@
         itemName.dataset.elegantfinEpisodeSplit = 'true';
     };
 
+    const disableEpisodeLogoLink = (page) => {
+        const logo = page?.querySelector(':scope > .detailLogo');
+        if (!logo) return;
+
+        logo.classList.remove('elegantfinClickableSeriesLogo');
+        logo.removeAttribute('role');
+        logo.removeAttribute('tabindex');
+        logo.removeAttribute('aria-label');
+    };
+
+    const makeEpisodeLogoClickable = (page) => {
+        if (!page?.querySelector('.btnPlaystate[data-type="Episode"]')) {
+            disableEpisodeLogoLink(page);
+            return;
+        }
+
+        const logo = page.querySelector(':scope > .detailLogo');
+        const seriesLink = page.querySelector(
+            '.nameContainer a.itemAction[data-type="Series"][data-id]'
+        );
+
+        if (
+            !logo
+            || !seriesLink
+            || logo.classList.contains('hide')
+        ) {
+            disableEpisodeLogoLink(page);
+            return;
+        }
+
+        logo.classList.add('elegantfinClickableSeriesLogo');
+        logo.setAttribute('role', 'link');
+        logo.setAttribute('tabindex', '0');
+        logo.setAttribute(
+            'aria-label',
+            `Open ${seriesLink.textContent.trim() || 'series'}`
+        );
+
+        if (logo.dataset.elegantfinSeriesLinkBound === 'true') return;
+        logo.dataset.elegantfinSeriesLinkBound = 'true';
+
+        const openSeries = () => {
+            if (!supportedLayout()) return;
+
+            const currentPage = logo.closest('.itemDetailPage');
+            if (!currentPage?.querySelector('.btnPlaystate[data-type="Episode"]')) return;
+
+            const currentSeriesLink = currentPage.querySelector(
+                '.nameContainer a.itemAction[data-type="Series"][data-id]'
+            );
+
+            currentSeriesLink?.click();
+        };
+
+        logo.addEventListener('click', openSeries);
+
+        logo.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openSeries();
+            }
+        });
+    };
+
     const run = () => {
         document.querySelectorAll('.itemDetailPage').forEach((page) => {
             if (supportedLayout()) {
                 splitEpisodeTitle(page);
+                makeEpisodeLogoClickable(page);
             } else {
                 restoreEpisodeTitle(page);
+                disableEpisodeLogoLink(page);
             }
         });
     };
