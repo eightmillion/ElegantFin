@@ -124,4 +124,165 @@
         justify-self: center !important;
         margin: 0 !important;
     }
+
+    /* ---------------------------------------------------------
+       Lower movie details — single-column mobile flow
+       --------------------------------------------------------- */
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailPagePrimaryContent {
+        width: min(92vw, 42rem) !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailSection {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: none !important;
+        gap: 1.1rem !important;
+        margin: 0 0 1.5rem !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailSectionContent {
+        order: 1 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .itemExternalLinks {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: .45rem !important;
+        width: 100% !important;
+        margin: .25rem 0 .5rem !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .itemDetailsGroup {
+        order: 2 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: .35rem 1rem !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+        border-radius: .9rem !important;
+        background: rgba(255,255,255,.035) !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem {
+        display: grid !important;
+        grid-template-columns: 7rem minmax(0, 1fr) !important;
+        align-items: start !important;
+        width: 100% !important;
+        gap: .85rem !important;
+        margin: 0 !important;
+        padding: .65rem 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem > .label {
+        min-width: 0 !important;
+        flex-basis: auto !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem > .focuscontainer-x,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem > .focuscontainer-x a {
+        min-width: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelections {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        gap: .7rem !important;
+        margin: 0 !important;
+        padding: 1rem !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+        border-radius: .9rem !important;
+        background: rgba(255,255,255,.035) !important;
+        box-shadow: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelectionFieldContainer,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelections .selectContainer,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelections .emby-select {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelections .emby-select {
+        text-overflow: ellipsis !important;
+    }
+
+    /* Preserve Jellyfin's hidden-state behavior after forcing the layout. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    :is(
+        .trackSelections.hide,
+        .recordingFields.hide,
+        .nextUpSection.hide,
+        #listChildrenCollapsible.hide,
+        .programGuideSection.hide,
+        .collectionItems.hide
+    ) {
+        display: none !important;
+    }
+
 }
