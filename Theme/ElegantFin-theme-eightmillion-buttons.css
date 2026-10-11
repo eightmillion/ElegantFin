@@ -1,0 +1,119 @@
+/* =========================================================
+   Detail-page action buttons
+   Narrow viewports use the stacked layout; wide viewports keep
+   the established geometry. TV remains untouched.
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+    html:not(.layout-tv)
+    #itemDetailPage:has(.mainDetailButtons)
+    .detailRibbon
+    .mainDetailButtons {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        width: 100% !important;
+        gap: .65rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        justify-content: normal !important;
+        align-items: center !important;
+        transform: none !important;
+    }
+
+    html:not(.layout-tv)
+    #itemDetailPage:has(.mainDetailButtons)
+    .detailRibbon
+    .mainDetailButtons
+    .detailButton.btnPlay {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 3.2rem !important;
+        margin: 1rem 0 .25rem !important;
+        padding: 0 1rem !important;
+        border: 1px solid rgba(255,255,255,.14) !important;
+        border-radius: .7rem !important;
+        background: rgba(255,255,255,.08) !important;
+        color: rgba(255,255,255,.95) !important;
+        box-shadow: none !important;
+    }
+
+    html:not(.layout-tv)
+    #itemDetailPage:has(.mainDetailButtons)
+    .detailRibbon
+    .mainDetailButtons
+    > :not(.btnPlay) {
+        justify-self: center !important;
+        margin: 0 !important;
+    }
+
+    /* Movies expose five secondary action buttons on mobile.
+       Keep them on one row beneath Play/Resume. */
+    html:not(.layout-tv)
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailRibbon
+    .mainDetailButtons {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        column-gap: .35rem !important;
+    }
+
+    html:not(.layout-tv)
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailRibbon
+    .mainDetailButtons
+    > :not(.btnPlay) {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+        justify-content: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+}
+
+@media (min-width: 900px) {
+
+    /* Keep the established desktop detail-page layout intact. */
+    html:not(.layout-tv)
+    #itemDetailPage
+    .mainDetailButtons {
+        display: flex !important;
+        grid-template-columns: none !important;
+        width: auto !important;
+        max-width: 100% !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: .65rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Same dark Play / Resume treatment used by mobile movies. */
+    html:not(.layout-tv)
+    #itemDetailPage
+    .mainDetailButtons
+    .detailButton.btnPlay {
+        grid-column: auto !important;
+        width: auto !important;
+        min-width: 10rem !important;
+        height: 3.2rem !important;
+        margin: 0 !important;
+        padding: 0 1.4rem !important;
+        border: 1px solid rgba(255,255,255,.14) !important;
+        border-radius: .7rem !important;
+        background: rgba(255,255,255,.08) !important;
+        color: rgba(255,255,255,.95) !important;
+        box-shadow: none !important;
+    }
+
+    html:not(.layout-tv)
+    #itemDetailPage
+    .mainDetailButtons
+    > :not(.btnPlay) {
+        justify-self: auto !important;
+        margin: 0 !important;
+    }
+}
