@@ -3,55 +3,57 @@
    ========================================================= */
 
 /* Modern mobile navigation drawer. */
-.layout-mobile .MuiDrawer-paper {
-    background: rgba(10,10,10,.50) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-right: 1px solid rgba(255,255,255,.08) !important;
-    box-shadow:
-        1px 0 0 rgba(255,255,255,.04),
-        12px 0 32px rgba(0,0,0,.35) !important;
-}
+@media (max-width: 899px) {
+    html:not(.layout-tv) .MuiDrawer-paper {
+        background: rgba(10,10,10,.50) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-right: 1px solid rgba(255,255,255,.08) !important;
+        box-shadow:
+            1px 0 0 rgba(255,255,255,.04),
+            12px 0 32px rgba(0,0,0,.35) !important;
+    }
 
-/* Soften the page scrim behind the glass drawer. */
-.layout-mobile .MuiDrawer-root .MuiBackdrop-root {
-    background: rgba(0,0,0,.28) !important;
-}
+    /* Soften the page scrim behind the glass drawer. */
+    html:not(.layout-tv) .MuiDrawer-root .MuiBackdrop-root {
+        background: rgba(0,0,0,.28) !important;
+    }
 
-/* Neutralize Jellyfin's purple selected-drawer treatment. */
-.layout-mobile
-.MuiDrawer-paper
-.MuiListItemButton-root.Mui-selected {
-    background: rgba(255,255,255,.14) !important;
-    color: #fff !important;
-}
+    /* Neutralize Jellyfin's purple selected-drawer treatment. */
+    html:not(.layout-tv)
+    .MuiDrawer-paper
+    .MuiListItemButton-root.Mui-selected {
+        background: rgba(255,255,255,.14) !important;
+        color: #fff !important;
+    }
 
-.layout-mobile
-.MuiDrawer-paper
-.MuiListItemButton-root.Mui-selected:hover {
-    background: rgba(255,255,255,.20) !important;
-}
+    html:not(.layout-tv)
+    .MuiDrawer-paper
+    .MuiListItemButton-root.Mui-selected:hover {
+        background: rgba(255,255,255,.20) !important;
+    }
 
-.layout-mobile
-.MuiDrawer-paper
-.MuiListItemButton-root.Mui-selected
-.MuiListItemIcon-root {
-    color: #fff !important;
+    html:not(.layout-tv)
+    .MuiDrawer-paper
+    .MuiListItemButton-root.Mui-selected
+    .MuiListItemIcon-root {
+        color: #fff !important;
+    }
 }
 
 /* =========================================================
    Shared dialog glass — desktop + mobile
    ========================================================= */
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .formDialog,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .dialog,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .selectionDialog,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .actionSheet,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .promptDialog {
     background: rgba(10,10,10,0) !important;
     backdrop-filter: blur(24px) !important;
@@ -63,17 +65,17 @@
     color: rgba(255,255,255,.94) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .formDialogHeader,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .dialogHeader {
     background: rgba(255,255,255,.02) !important;
     border-bottom: 1px solid rgba(255,255,255,.07) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .formDialogFooter,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .dialogFooter {
     background:
         linear-gradient(
@@ -89,20 +91,20 @@
    Identify dialog
    ========================================================= */
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .formDialogHeader {
     min-height: 3.5rem !important;
     padding: .65rem .75rem !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .formDialogHeaderTitle {
     font-size: 1.2rem !important;
     font-weight: 500 !important;
     color: rgba(255,255,255,.96) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .dialogContentInner {
     box-sizing: border-box !important;
     width: 100% !important;
@@ -111,23 +113,23 @@
     padding-right: 1rem !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .popupIdentifyForm {
     width: 100% !important;
     max-width: 44rem !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .fieldDescription,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .popupIdentifyForm > p {
     color: rgba(255,255,255,.72) !important;
     line-height: 1.45 !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .emby-input,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog input[is="emby-input"] {
     background: rgba(255,255,255,.065) !important;
     color: #fff !important;
@@ -141,9 +143,9 @@
         box-shadow .18s ease;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .emby-input:focus,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog input[is="emby-input"]:focus {
     background: rgba(255,255,255,.09) !important;
     border-color: rgba(255,255,255,.38) !important;
@@ -151,7 +153,7 @@
         0 0 0 2px rgba(255,255,255,.08) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .button-submit {
     min-height: 2.8rem !important;
     padding: .55rem 1.4rem !important;
@@ -162,13 +164,15 @@
     box-shadow: none !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .button-submit:hover {
     background: rgba(255,255,255,.18) !important;
 }
 
-/* Desktop dialogs remain floating panels; mobile keeps the fullscreen shape. */
-.layout-desktop .identifyDialog {
-    border-radius: 1rem !important;
-    overflow: hidden !important;
+/* Wide-screen dialogs remain floating panels; narrow layouts keep the fullscreen shape. */
+@media (min-width: 900px) {
+    html:not(.layout-tv) .identifyDialog {
+        border-radius: 1rem !important;
+        overflow: hidden !important;
+    }
 }
