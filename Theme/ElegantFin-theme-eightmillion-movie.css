@@ -94,10 +94,11 @@
     .layout-mobile
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     .mainDetailButtons {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
         width: 100% !important;
-        gap: .65rem !important;
+        gap: .45rem !important;
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -105,7 +106,7 @@
     .layout-mobile
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     .mainDetailButtons .btnPlay {
-        grid-column: 1 / -1 !important;
+        flex: 0 0 100% !important;
         width: 100% !important;
         min-width: 0 !important;
         height: 3.2rem !important;
@@ -121,7 +122,10 @@
     .layout-mobile
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     .mainDetailButtons > :not(.btnPlay) {
-        justify-self: center !important;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        width: auto !important;
+        justify-content: center !important;
         margin: 0 !important;
     }
 
@@ -227,16 +231,27 @@
 
     .layout-mobile
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
-    .detailsGroupItem > .focuscontainer-x,
-    .layout-mobile
-    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
-    .detailsGroupItem > .focuscontainer-x a {
+    .detailsGroupItem > .focuscontainer-x {
         display: block !important;
         min-width: 0 !important;
         width: 100% !important;
         margin: 0 !important;
         line-height: 1.4 !important;
         text-align: left !important;
+        white-space: normal !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem > .focuscontainer-x a {
+        display: inline !important;
+        width: auto !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        line-height: inherit !important;
+        text-align: inherit !important;
         white-space: normal !important;
         overflow-wrap: normal !important;
         word-break: normal !important;
