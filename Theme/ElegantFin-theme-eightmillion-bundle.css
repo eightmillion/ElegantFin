@@ -6159,13 +6159,13 @@ for extended styling, use the add-on */
 
 /* =========================================================
    Detail-page action buttons
-   Mobile uses the movie-page stacked layout; desktop keeps
-   its existing geometry and only shares the visual styling.
+   Narrow viewports use the stacked layout; wide viewports keep
+   the established geometry. TV remains untouched.
    ========================================================= */
 
 @media (max-width: 899px) {
 
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.mainDetailButtons)
     .detailRibbon
     .mainDetailButtons {
@@ -6180,7 +6180,7 @@ for extended styling, use the add-on */
         transform: none !important;
     }
 
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.mainDetailButtons)
     .detailRibbon
     .mainDetailButtons
@@ -6198,7 +6198,7 @@ for extended styling, use the add-on */
         box-shadow: none !important;
     }
 
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.mainDetailButtons)
     .detailRibbon
     .mainDetailButtons
@@ -6209,7 +6209,7 @@ for extended styling, use the add-on */
 
     /* Movies expose five secondary action buttons on mobile.
        Keep them on one row beneath Play/Resume. */
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     .detailRibbon
     .mainDetailButtons {
@@ -6217,7 +6217,7 @@ for extended styling, use the add-on */
         column-gap: .35rem !important;
     }
 
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     .detailRibbon
     .mainDetailButtons
@@ -6236,7 +6236,7 @@ for extended styling, use the add-on */
 @media (min-width: 900px) {
 
     /* Keep the established desktop detail-page layout intact. */
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage
     .mainDetailButtons {
         display: flex !important;
@@ -6251,7 +6251,7 @@ for extended styling, use the add-on */
     }
 
     /* Same dark Play / Resume treatment used by mobile movies. */
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage
     .mainDetailButtons
     .detailButton.btnPlay {
@@ -6268,7 +6268,7 @@ for extended styling, use the add-on */
         box-shadow: none !important;
     }
 
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage
     .mainDetailButtons
     > :not(.btnPlay) {
@@ -6436,8 +6436,8 @@ for extended styling, use the add-on */
     color: #fff !important;
 }
 
-/* Episode backdrop treatment — desktop/mobile only. */
-:is(.layout-desktop, .layout-mobile)
+/* Episode backdrop treatment — all non-TV layouts. */
+html:not(.layout-tv)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"]) {
     background:
         linear-gradient(
@@ -6447,7 +6447,7 @@ for extended styling, use the add-on */
         ) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 body:has(
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 )
@@ -6456,7 +6456,7 @@ body:has(
 }
 
 /* Season pages can keep more of the artwork visible than the upstream treatment. */
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 #itemDetailPage:has(.btnPlaystate[data-type="Season"]) {
     background:
         linear-gradient(
@@ -6466,7 +6466,7 @@ body:has(
         ) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 body:has(
     #itemDetailPage:has(.btnPlaystate[data-type="Season"])
 )
@@ -6477,11 +6477,11 @@ body:has(
 @media (min-width: 900px) {
 
     /* Search page needs to clear the fixed Modern app bar. */
-    .layout-desktop #searchPage {
+    html:not(.layout-tv) #searchPage {
         padding-top: 8.25rem !important;
     }
 
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .detailPagePrimaryContainer {
         width: calc(100vw - (var(--sidePadding) * 2)) !important;
@@ -6489,7 +6489,7 @@ body:has(
         margin: clamp(1.5rem, 3vh, 3rem) auto 2rem !important;
     }
 
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .detailPagePrimaryContent {
         grid-column: 1 / -1 !important;
@@ -6502,7 +6502,7 @@ body:has(
         box-sizing: border-box !important;
     }
 
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .detailPagePrimaryContent > .detailSection {
         width: 100% !important;
@@ -7422,55 +7422,57 @@ body:has(.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root)
    ========================================================= */
 
 /* Modern mobile navigation drawer. */
-.layout-mobile .MuiDrawer-paper {
-    background: rgba(10,10,10,.50) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-right: 1px solid rgba(255,255,255,.08) !important;
-    box-shadow:
-        1px 0 0 rgba(255,255,255,.04),
-        12px 0 32px rgba(0,0,0,.35) !important;
-}
+@media (max-width: 899px) {
+    html:not(.layout-tv) .MuiDrawer-paper {
+        background: rgba(10,10,10,.50) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-right: 1px solid rgba(255,255,255,.08) !important;
+        box-shadow:
+            1px 0 0 rgba(255,255,255,.04),
+            12px 0 32px rgba(0,0,0,.35) !important;
+    }
 
-/* Soften the page scrim behind the glass drawer. */
-.layout-mobile .MuiDrawer-root .MuiBackdrop-root {
-    background: rgba(0,0,0,.28) !important;
-}
+    /* Soften the page scrim behind the glass drawer. */
+    html:not(.layout-tv) .MuiDrawer-root .MuiBackdrop-root {
+        background: rgba(0,0,0,.28) !important;
+    }
 
-/* Neutralize Jellyfin's purple selected-drawer treatment. */
-.layout-mobile
-.MuiDrawer-paper
-.MuiListItemButton-root.Mui-selected {
-    background: rgba(255,255,255,.14) !important;
-    color: #fff !important;
-}
+    /* Neutralize Jellyfin's purple selected-drawer treatment. */
+    html:not(.layout-tv)
+    .MuiDrawer-paper
+    .MuiListItemButton-root.Mui-selected {
+        background: rgba(255,255,255,.14) !important;
+        color: #fff !important;
+    }
 
-.layout-mobile
-.MuiDrawer-paper
-.MuiListItemButton-root.Mui-selected:hover {
-    background: rgba(255,255,255,.20) !important;
-}
+    html:not(.layout-tv)
+    .MuiDrawer-paper
+    .MuiListItemButton-root.Mui-selected:hover {
+        background: rgba(255,255,255,.20) !important;
+    }
 
-.layout-mobile
-.MuiDrawer-paper
-.MuiListItemButton-root.Mui-selected
-.MuiListItemIcon-root {
-    color: #fff !important;
+    html:not(.layout-tv)
+    .MuiDrawer-paper
+    .MuiListItemButton-root.Mui-selected
+    .MuiListItemIcon-root {
+        color: #fff !important;
+    }
 }
 
 /* =========================================================
    Shared dialog glass — desktop + mobile
    ========================================================= */
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .formDialog,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .dialog,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .selectionDialog,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .actionSheet,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .promptDialog {
     background: rgba(10,10,10,0) !important;
     backdrop-filter: blur(24px) !important;
@@ -7482,17 +7484,17 @@ body:has(.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root)
     color: rgba(255,255,255,.94) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .formDialogHeader,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .dialogHeader {
     background: rgba(255,255,255,.02) !important;
     border-bottom: 1px solid rgba(255,255,255,.07) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .formDialogFooter,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .dialogFooter {
     background:
         linear-gradient(
@@ -7508,20 +7510,20 @@ body:has(.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root)
    Identify dialog
    ========================================================= */
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .formDialogHeader {
     min-height: 3.5rem !important;
     padding: .65rem .75rem !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .formDialogHeaderTitle {
     font-size: 1.2rem !important;
     font-weight: 500 !important;
     color: rgba(255,255,255,.96) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .dialogContentInner {
     box-sizing: border-box !important;
     width: 100% !important;
@@ -7530,23 +7532,23 @@ body:has(.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root)
     padding-right: 1rem !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .popupIdentifyForm {
     width: 100% !important;
     max-width: 44rem !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .fieldDescription,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .popupIdentifyForm > p {
     color: rgba(255,255,255,.72) !important;
     line-height: 1.45 !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .emby-input,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog input[is="emby-input"] {
     background: rgba(255,255,255,.065) !important;
     color: #fff !important;
@@ -7560,9 +7562,9 @@ body:has(.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root)
         box-shadow .18s ease;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .emby-input:focus,
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog input[is="emby-input"]:focus {
     background: rgba(255,255,255,.09) !important;
     border-color: rgba(255,255,255,.38) !important;
@@ -7570,7 +7572,7 @@ body:has(.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root)
         0 0 0 2px rgba(255,255,255,.08) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .button-submit {
     min-height: 2.8rem !important;
     padding: .55rem 1.4rem !important;
@@ -7581,13 +7583,15 @@ body:has(.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root)
     box-shadow: none !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 .identifyDialog .button-submit:hover {
     background: rgba(255,255,255,.18) !important;
 }
 
-/* Desktop dialogs remain floating panels; mobile keeps the fullscreen shape. */
-.layout-desktop .identifyDialog {
-    border-radius: 1rem !important;
-    overflow: hidden !important;
+/* Wide-screen dialogs remain floating panels; narrow layouts keep the fullscreen shape. */
+@media (min-width: 900px) {
+    html:not(.layout-tv) .identifyDialog {
+        border-radius: 1rem !important;
+        overflow: hidden !important;
+    }
 }
