@@ -1,12 +1,12 @@
 /* =========================================================
    Detail-page action buttons
-   Mobile uses the movie-page stacked layout; desktop keeps
-   its existing geometry and only shares the visual styling.
+   Narrow viewports use the stacked layout; wide viewports keep
+   the established geometry. TV remains untouched.
    ========================================================= */
 
 @media (max-width: 899px) {
 
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.mainDetailButtons)
     .detailRibbon
     .mainDetailButtons {
@@ -21,7 +21,7 @@
         transform: none !important;
     }
 
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.mainDetailButtons)
     .detailRibbon
     .mainDetailButtons
@@ -39,7 +39,7 @@
         box-shadow: none !important;
     }
 
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.mainDetailButtons)
     .detailRibbon
     .mainDetailButtons
@@ -50,7 +50,7 @@
 
     /* Movies expose five secondary action buttons on mobile.
        Keep them on one row beneath Play/Resume. */
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     .detailRibbon
     .mainDetailButtons {
@@ -58,7 +58,7 @@
         column-gap: .35rem !important;
     }
 
-    .layout-mobile
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
     .detailRibbon
     .mainDetailButtons
@@ -77,7 +77,7 @@
 @media (min-width: 900px) {
 
     /* Keep the established desktop detail-page layout intact. */
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage
     .mainDetailButtons {
         display: flex !important;
@@ -92,7 +92,7 @@
     }
 
     /* Same dark Play / Resume treatment used by mobile movies. */
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage
     .mainDetailButtons
     .detailButton.btnPlay {
@@ -109,7 +109,7 @@
         box-shadow: none !important;
     }
 
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage
     .mainDetailButtons
     > :not(.btnPlay) {
