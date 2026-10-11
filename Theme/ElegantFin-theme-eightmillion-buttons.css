@@ -47,6 +47,31 @@
         justify-self: center !important;
         margin: 0 !important;
     }
+
+    /* Movies expose five secondary action buttons on mobile.
+       Keep them on one row beneath Play/Resume. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailRibbon
+    .mainDetailButtons {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        column-gap: .35rem !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailRibbon
+    .mainDetailButtons
+    > :not(.btnPlay) {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+        justify-content: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
 }
 
 @media (min-width: 900px) {
