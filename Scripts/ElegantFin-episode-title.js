@@ -3,11 +3,8 @@
     window.__elegantFinEpisodeEnhancementsV2 = true;
     window.__elegantFinEpisodeTitleSplitter = true;
 
-    const supportedLayout = () => {
-        const root = document.documentElement;
-        return root.classList.contains('layout-desktop')
-            || root.classList.contains('layout-mobile');
-    };
+    const supportedLayout = () =>
+        !document.documentElement.classList.contains('layout-tv');
 
     const restoreEpisodeTitle = (page) => {
         const itemName = page?.querySelector('.nameContainer > .itemName');
