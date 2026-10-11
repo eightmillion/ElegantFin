@@ -5,19 +5,23 @@
        Jellyfin 12's "Auto" layout can mis-detect Chrome on Android as desktop
        because its legacy layout choice is based on browser.mobile, which is
        derived largely from the user-agent string. Correct only automatic/default
-       layout choices on clearly touch-oriented phone/tablet screens. Explicit
+       layout choices only on Android touch devices with phone/tablet-sized screens. Explicit
        Desktop/Mobile/TV choices are preserved.
     */
     const touchDevice =
         navigator.maxTouchPoints > 0
         || window.matchMedia?.('(pointer: coarse)').matches;
 
+    const androidPlatform =
+        navigator.userAgentData?.platform === 'Android'
+        || /\\bAndroid\\b/i.test(navigator.userAgent);
+
     const shortSide = Math.min(
         window.screen?.width || window.innerWidth,
         window.screen?.height || window.innerHeight
     );
 
-    if (touchDevice && shortSide <= 900) {
+    if (androidPlatform && touchDevice && shortSide <= 900) {
         try {
             const savedLayout = localStorage.getItem('layout');
 
