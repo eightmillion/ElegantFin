@@ -16,7 +16,7 @@
 
 /* Inter Font Family */
 
-/* Inter variable font — inlined @font-face declarations, no @import required */
+/* Inter variable font — inlined font-face declarations, no stylesheet import required */
 @font-face {
     font-family: "Inter";
     font-style: normal;
