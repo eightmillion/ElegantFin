@@ -10,8 +10,8 @@
     color: #fff !important;
 }
 
-/* Episode backdrop treatment — desktop/mobile only. */
-:is(.layout-desktop, .layout-mobile)
+/* Episode backdrop treatment — all non-TV layouts. */
+html:not(.layout-tv)
 #itemDetailPage:has(.btnPlaystate[data-type="Episode"]) {
     background:
         linear-gradient(
@@ -21,7 +21,7 @@
         ) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 body:has(
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
 )
@@ -30,7 +30,7 @@ body:has(
 }
 
 /* Season pages can keep more of the artwork visible than the upstream treatment. */
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 #itemDetailPage:has(.btnPlaystate[data-type="Season"]) {
     background:
         linear-gradient(
@@ -40,7 +40,7 @@ body:has(
         ) !important;
 }
 
-:is(.layout-desktop, .layout-mobile)
+html:not(.layout-tv)
 body:has(
     #itemDetailPage:has(.btnPlaystate[data-type="Season"])
 )
@@ -51,11 +51,11 @@ body:has(
 @media (min-width: 900px) {
 
     /* Search page needs to clear the fixed Modern app bar. */
-    .layout-desktop #searchPage {
+    html:not(.layout-tv) #searchPage {
         padding-top: 8.25rem !important;
     }
 
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .detailPagePrimaryContainer {
         width: calc(100vw - (var(--sidePadding) * 2)) !important;
@@ -63,7 +63,7 @@ body:has(
         margin: clamp(1.5rem, 3vh, 3rem) auto 2rem !important;
     }
 
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .detailPagePrimaryContent {
         grid-column: 1 / -1 !important;
@@ -76,7 +76,7 @@ body:has(
         box-sizing: border-box !important;
     }
 
-    .layout-desktop
+    html:not(.layout-tv)
     #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
     .detailPagePrimaryContent > .detailSection {
         width: 100% !important;
