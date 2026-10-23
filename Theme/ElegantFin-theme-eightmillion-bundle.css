@@ -5773,7 +5773,7 @@ for extended styling, use the add-on */
 
     /* Person pages do not need the normal mobile backdrop reservation. */
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5785,7 +5785,7 @@ for extended styling, use the add-on */
 
     /* Let the portrait use the full available mobile width. */
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5797,7 +5797,7 @@ for extended styling, use the add-on */
     }
 
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5811,13 +5811,13 @@ for extended styling, use the add-on */
     }
 
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
     .detailImageContainer .cardBox,
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5828,7 +5828,7 @@ for extended styling, use the add-on */
 
     /* Preserve a small frame around the headshot. */
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5842,7 +5842,7 @@ for extended styling, use the add-on */
        relative to the viewport rather than a narrower inherited column.
     */
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5855,7 +5855,7 @@ for extended styling, use the add-on */
 
     /* Keep the person action buttons centered as a compact group. */
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5872,7 +5872,7 @@ for extended styling, use the add-on */
     }
 
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5883,7 +5883,7 @@ for extended styling, use the add-on */
     /* Jellyfin toggles detail-clamp-text when expanding the biography;
        pin the typography so the text size does not jump. */
     .layout-mobile
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5900,7 +5900,7 @@ for extended styling, use the add-on */
 @media (min-width: 900px) {
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 ) {
@@ -5910,7 +5910,7 @@ for extended styling, use the add-on */
 
     /* Person pages do not need ElegantFin's large empty hero reservation. */
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5921,7 +5921,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5934,7 +5934,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5953,7 +5953,7 @@ for extended styling, use the add-on */
 
     /* Hide the legacy desktop portrait; use the portrait inside infoWrapper instead. */
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5962,7 +5962,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5978,7 +5978,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -5992,7 +5992,7 @@ for extended styling, use the add-on */
 
     /* Reuse Jellyfin's portrait that is normally mobile-only. */
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6005,7 +6005,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6022,13 +6022,13 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
     .infoWrapper > .detailImageContainer .cardBox,
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6038,7 +6038,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6051,7 +6051,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6066,7 +6066,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6081,7 +6081,7 @@ for extended styling, use the add-on */
 
     /* Biography / details occupy the right profile column. */
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6095,7 +6095,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6108,7 +6108,7 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6122,7 +6122,7 @@ for extended styling, use the add-on */
 
     /* Let the filmography use the wider profile layout as well. */
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
@@ -6136,13 +6136,13 @@ for extended styling, use the add-on */
     }
 
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
     .detailPageSecondaryContainer .verticalSection,
     .layout-desktop
-    #itemDetailPage:is(
+    #itemDetailPage:not(:has(.btnInstantMix:not(.hide))):is(
     :has(.detailImageContainer .person),
     :has(.detailImageContainer .squareCard .cardImageContainer[data-src=""])
 )
