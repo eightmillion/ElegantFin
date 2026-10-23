@@ -1,0 +1,624 @@
+/* =========================================================
+   Series detail — desktop hub layout
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"]) {
+        --series-shell: calc(100vw - (var(--sidePadding) * 2));
+        --series-gap: clamp(1.75rem, 2.5vw, 3rem);
+        --season-card-width: 14rem;
+        --series-nextup-offset: 25.5rem;
+        --nextup-card-width: 16rem;
+
+        background: none !important;
+        background-image: none !important;
+    }
+
+    /* The series hero uses the backdrop as a full-screen canvas. */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .itemBackdrop {
+        height: calc(100vh - 3.5rem) !important;
+        min-height: 42rem !important;
+    }
+
+    /* Pull the hub back over the normal-flow backdrop. */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailPageWrapperContainer {
+        position: relative !important;
+        z-index: 2 !important;
+
+        width: var(--series-shell) !important;
+        max-width: none !important;
+        min-height: calc(100vh - 3.5rem) !important;
+
+        margin: calc(-100vh + 3.5rem) auto 0 !important;
+        padding: 5.5rem 0 3rem !important;
+
+        background: none !important;
+        background-image: none !important;
+    }
+
+    /*
+       Use main for the readability tint so it remains continuous
+       behind the fixed header and through the full page height.
+    */
+    .layout-desktop
+    body.libraryDocument:has(
+        #itemDetailPage .btnPlaystate[data-type="Series"]
+    )
+    main {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.34) 0%,
+                rgba(0,0,0,.12) 36%,
+                rgba(0,0,0,.08) 62%,
+                rgba(0,0,0,.25) 100%
+            ),
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,.05) 0%,
+                rgba(0,0,0,.04) 30vh,
+                rgba(0,0,0,.16) 55vh,
+                rgba(0,0,0,.62) 82vh,
+                rgba(0,0,0,.82) 100vh,
+                rgba(0,0,0,.82) 100%
+            ) !important;
+    }
+
+    /* Main two-column series hub. */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailPagePrimaryContainer {
+        display: grid !important;
+        grid-template-columns:
+            minmax(380px, 42%)
+            minmax(0, 1fr) !important;
+        grid-template-rows: auto auto auto !important;
+
+        column-gap: var(--series-gap) !important;
+        row-gap: 1.15rem !important;
+
+        align-items: start !important;
+        align-content: start !important;
+
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* No separate poster column for a series. */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailPagePrimaryContainer > .detailImageContainer {
+        display: none !important;
+    }
+
+    /*
+       Jellyfin nests the useful series sections below two wrappers.
+       Flatten those wrappers so their children participate in the hub grid.
+    */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailPagePrimaryContent,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailSection {
+        display: contents !important;
+    }
+
+    /* ---------------------------------------------------------
+       Left column — logo, status, actions, synopsis and metadata
+       --------------------------------------------------------- */
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailRibbon {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+
+        position: static !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 13rem 0 0 !important;
+
+        background: none !important;
+        text-align: left !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    > .detailLogo[style*="url("] {
+        display: block !important;
+
+        position: absolute !important;
+        z-index: 3 !important;
+
+        top: 4.75rem !important;
+        left: var(--sidePadding) !important;
+
+        width: min(40rem, 42vw) !important;
+        height: 12rem !important;
+
+        margin: 0 !important;
+        transform: none !important;
+
+        background-position: left center !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailRibbon .infoWrapper,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .nameContainer {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        place-items: start !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        text-align: left !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .itemMiscInfo-primary {
+        width: 100% !important;
+        justify-content: flex-start !important;
+
+        margin: .15rem 0 .7rem !important;
+        padding: 0 !important;
+
+        text-align: left !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .mainDetailButtons {
+        width: 100% !important;
+        justify-content: flex-start !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailSectionContent {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 44rem !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailSectionContent .overview {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 0 .85rem !important;
+
+        line-height: 1.6 !important;
+        color: rgba(255,255,255,.94) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .itemDetailsGroup {
+        grid-column: 1 !important;
+        grid-row: 3 !important;
+
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 44rem !important;
+
+        margin: .25rem 0 0 !important;
+        padding: 0 !important;
+
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+
+        overflow: visible !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailsGroupItem {
+        display: grid !important;
+        grid-template-columns: 7rem minmax(0, 1fr) !important;
+
+        gap: .85rem !important;
+        align-items: start !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: .28rem 0 !important;
+
+        border: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailsGroupItem .label {
+        margin: 0 !important;
+        color: rgba(255,255,255,.72) !important;
+        font-size: .9rem !important;
+        font-weight: 600 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailsGroupItem .focuscontainer-x,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailsGroupItem .focuscontainer-x a {
+        min-width: 0 !important;
+        text-align: left !important;
+        color: rgba(255,255,255,.90) !important;
+    }
+
+    /* ---------------------------------------------------------
+       Right column — Seasons first, compact Next Up below
+       --------------------------------------------------------- */
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    #listChildrenCollapsible {
+        grid-column: 2 !important;
+        grid-row: 1 / span 3 !important;
+
+        position: relative !important;
+        align-self: start !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+
+        overflow: visible !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    #listChildrenCollapsible .sectionTitle {
+        display: block !important;
+
+        margin: 0 0 .75rem !important;
+        padding: 0 5rem 0 0 !important;
+
+        font-size: 1.25rem !important;
+        font-weight: 650 !important;
+
+        color: rgba(255,255,255,.96) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    #listChildrenCollapsible .itemsContainer {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+
+        width: 100% !important;
+
+        gap: 1rem !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        scrollbar-width: none !important;
+        scroll-behavior: smooth !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    #listChildrenCollapsible .itemsContainer::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    #listChildrenCollapsible .card {
+        flex: 0 0 var(--season-card-width) !important;
+        width: var(--season-card-width) !important;
+        max-width: var(--season-card-width) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .nextUpSection {
+        grid-column: 2 !important;
+        grid-row: 1 / span 3 !important;
+
+        align-self: start !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: var(--series-nextup-offset) 0 0 !important;
+        padding: 0 !important;
+
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+
+        overflow: visible !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .nextUpSection .sectionTitle {
+        margin: 0 0 .5rem !important;
+        padding: 0 !important;
+
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+
+        color: rgba(255,255,255,.82) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .nextUpItems {
+        display: flex !important;
+        width: 100% !important;
+
+        align-items: flex-start !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .nextUpItems > .card {
+        flex: 0 0 var(--nextup-card-width) !important;
+        width: var(--nextup-card-width) !important;
+        max-width: var(--nextup-card-width) !important;
+    }
+
+    /*
+       Text should remain readable against bright backdrops without
+       introducing section-sized glass panels.
+    */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    :is(
+        .detailRibbon,
+        .detailSectionContent,
+        .itemDetailsGroup,
+        #listChildrenCollapsible,
+        .nextUpSection
+    ) {
+        text-shadow:
+            0 1px 3px rgba(0,0,0,.95),
+            0 0 10px rgba(0,0,0,.40);
+    }
+
+    /* Minimal rounding belongs on the image itself, not its text wrapper. */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    #listChildrenCollapsible :is(.card, .cardBox),
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .nextUpItems :is(.card, .cardBox) {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        filter: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    #listChildrenCollapsible .cardBox,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .nextUpItems .cardBox {
+        overflow: visible !important;
+        background: transparent !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    #listChildrenCollapsible :is(.cardScalable, .cardImageContainer),
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .nextUpItems :is(.cardScalable, .cardImageContainer) {
+        border-radius: .22rem !important;
+        overflow: hidden !important;
+        box-shadow: none !important;
+        filter: none !important;
+    }
+
+    /* ---------------------------------------------------------
+       Lower page — share the same movie-page gutters
+       --------------------------------------------------------- */
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailPageSecondaryContainer {
+        position: relative !important;
+        z-index: 2 !important;
+
+        width: var(--series-shell) !important;
+        max-width: none !important;
+
+        box-sizing: border-box !important;
+
+        margin: 1.75rem auto 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        background: none !important;
+        background-image: none !important;
+
+        overflow-x: clip !important;
+    }
+
+    /*
+       ElegantFin normally extends horizontal scrollers into the page
+       gutters. Keep the series lower sections aligned to the same shell.
+    */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailPageSecondaryContainer
+    :is(.emby-scroller-container, .emby-scroller, .scrollX) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .detailPageSecondaryContainer .itemsContainer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /*
+       Our earlier series card treatment must not leak into Cast & Crew.
+       Keep the square image treatment used by the normal/movie detail page.
+    */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    :is(#castCollapsible, #guestCastCollapsible)
+    .cardBox {
+        border-radius: 0 !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        filter: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    :is(#castCollapsible, #guestCastCollapsible)
+    .cardScalable {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    :is(#castCollapsible, #guestCastCollapsible)
+    .cardImageContainer {
+        border-radius: 0 !important;
+    }
+
+    /* ---------------------------------------------------------
+       Season navigation inserted by ElegantFin-series-season-nav.js
+       --------------------------------------------------------- */
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .seriesSeasonNav {
+        position: absolute !important;
+
+        top: -.45rem !important;
+        right: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: .1rem !important;
+
+        z-index: 5 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .seriesSeasonNav[hidden] {
+        display: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .seriesSeasonNav button {
+        width: 2.25rem !important;
+        height: 2.25rem !important;
+
+        display: grid !important;
+        place-items: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: 0 !important;
+        border-radius: .55rem !important;
+
+        background: transparent !important;
+        color: rgba(255,255,255,.78) !important;
+
+        cursor: pointer;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .seriesSeasonNav button:hover {
+        background: rgba(255,255,255,.10) !important;
+        color: #fff !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .seriesSeasonNav button:disabled {
+        opacity: .25 !important;
+    }
+
+    /* Hidden Jellyfin sections must remain hidden after wrapper flattening. */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    :is(
+        .trackSelections.hide,
+        .recordingFields.hide,
+        .collectionItems.hide,
+        .programGuideSection.hide,
+        .nextUpSection.hide,
+        #listChildrenCollapsible.hide
+    ) {
+        display: none !important;
+    }
+}
