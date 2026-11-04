@@ -78,7 +78,7 @@
         grid-template-columns:
             minmax(380px, 42%)
             minmax(0, 1fr) !important;
-        grid-template-rows: auto auto auto !important;
+        grid-template-rows: auto auto auto auto auto !important;
 
         column-gap: var(--series-gap) !important;
         row-gap: 1.15rem !important;
@@ -294,14 +294,14 @@
     }
 
     /* ---------------------------------------------------------
-       Right column — Seasons first, compact Next Up below
+       Lower shelves — keep Seasons / Next Up out of the hero art
        --------------------------------------------------------- */
 
     .layout-desktop
     #itemDetailPage:has(.btnPlaystate[data-type="Series"])
     #listChildrenCollapsible {
-        grid-column: 2 !important;
-        grid-row: 1 / span 3 !important;
+        grid-column: 1 / -1 !important;
+        grid-row: 4 !important;
 
         position: relative !important;
         align-self: start !important;
@@ -309,7 +309,11 @@
         width: 100% !important;
         min-width: 0 !important;
 
-        margin: 0 !important;
+        /*
+           Push the shelf below the full-height hero so season artwork does
+           not sit on top of the series backdrop's focal subject.
+        */
+        margin: max(10rem, calc(100vh - 35rem)) 0 0 !important;
         padding: 0 !important;
 
         background: transparent !important;
@@ -370,15 +374,15 @@
     .layout-desktop
     #itemDetailPage:has(.btnPlaystate[data-type="Series"])
     .nextUpSection {
-        grid-column: 2 !important;
-        grid-row: 1 / span 3 !important;
+        grid-column: 1 / -1 !important;
+        grid-row: 5 !important;
 
         align-self: start !important;
 
         width: 100% !important;
         min-width: 0 !important;
 
-        margin: var(--series-nextup-offset) 0 0 !important;
+        margin: 1.5rem 0 0 !important;
         padding: 0 !important;
 
         background: transparent !important;
