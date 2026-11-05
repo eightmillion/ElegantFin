@@ -81,7 +81,9 @@
     };
 
     const makeEpisodeLogoClickable = (page) => {
-        if (!page?.querySelector('.btnPlaystate[data-type="Episode"]')) {
+        const isEpisode = !!page?.querySelector('.btnPlaystate[data-type="Episode"]');
+        const isSeason = !!page?.querySelector('.btnPlaystate[data-type="Season"]');
+        if (!isEpisode && !isSeason) {
             disableEpisodeLogoLink(page);
             return;
         }
@@ -93,7 +95,7 @@
 
         if (
             !logo
-            || !seriesLink
+            || (isEpisode && !seriesLink)
             || logo.classList.contains('hide')
         ) {
             disableEpisodeLogoLink(page);
@@ -105,23 +107,58 @@
         logo.setAttribute('tabindex', '0');
         logo.setAttribute(
             'aria-label',
-            `Open ${seriesLink.textContent.trim() || 'series'}`
+            `Open ${seriesLink?.textContent.trim() || 'series'}`
         );
 
         if (logo.dataset.elegantfinSeriesLinkBound === 'true') return;
         logo.dataset.elegantfinSeriesLinkBound = 'true';
 
-        const openSeries = () => {
+        const openSeries = async () => {
             if (!supportedLayout()) return;
 
             const currentPage = logo.closest('.itemDetailPage');
-            if (!currentPage?.querySelector('.btnPlaystate[data-type="Episode"]')) return;
+            const currentIsEpisode = !!currentPage?.querySelector(
+                '.btnPlaystate[data-type="Episode"]'
+            );
+            const currentIsSeason = !!currentPage?.querySelector(
+                '.btnPlaystate[data-type="Season"]'
+            );
+            if (!currentIsEpisode && !currentIsSeason) return;
 
             const currentSeriesLink = currentPage.querySelector(
                 '.nameContainer a.itemAction[data-type="Series"][data-id]'
             );
+            if (currentSeriesLink) {
+                currentSeriesLink.click();
+                return;
+            }
 
-            currentSeriesLink?.click();
+            // On Season pages, resolve the parent if no series link is rendered.
+            if (!currentIsSeason || !window.ApiClient) return;
+
+            const seasonId = new URLSearchParams(
+                location.hash.split('?')[1] || ''
+            ).get('id');
+            if (!seasonId) return;
+
+            try {
+                const season = await window.ApiClient.getItem(
+                    window.ApiClient.getCurrentUserId(), seasonId
+                );
+                const activeId = new URLSearchParams(
+                    location.hash.split('?')[1] || ''
+                ).get('id');
+                if (
+                    season?.Type === 'Season'
+                    && season.ParentId
+                    && activeId === seasonId
+                ) {
+                    location.hash = '#/details?id='
+                        + encodeURIComponent(season.ParentId);
+                }
+            } catch (err) {
+                console.warn('ElegantFin season logo navigation:', err);
+            }
         };
 
         logo.addEventListener('click', openSeries);
