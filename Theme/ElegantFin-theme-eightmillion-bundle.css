@@ -6406,13 +6406,13 @@ for extended styling, use the add-on */
 
 /* Episode series logo navigation — desktop/mobile only. */
 :is(.layout-desktop, .layout-mobile)
-#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+#itemDetailPage:has(:is(.btnPlaystate[data-type="Episode"], .btnPlaystate[data-type="Season"]))
 > .detailLogo.elegantfinClickableSeriesLogo {
     cursor: pointer !important;
 }
 
 :is(.layout-desktop, .layout-mobile)
-#itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+#itemDetailPage:has(:is(.btnPlaystate[data-type="Episode"], .btnPlaystate[data-type="Season"]))
 > .detailLogo.elegantfinClickableSeriesLogo:focus-visible {
     outline: 2px solid rgba(255,255,255,.9) !important;
     outline-offset: .35rem !important;
