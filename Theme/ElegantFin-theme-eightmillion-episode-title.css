@@ -134,3 +134,14 @@
     outline-offset: .35rem !important;
     border-radius: .35rem !important;
 }
+
+/* Place season series-logo link above the infoWrapper click layer. */
+@media (min-width:900px) {
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Season"])
+    > .detailLogo.elegantfinClickableSeriesLogo {
+        position: relative !important;
+        z-index: 10 !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+}
