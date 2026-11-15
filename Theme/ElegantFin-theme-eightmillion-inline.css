@@ -4678,6 +4678,56 @@ for extended styling, use the add-on */
     );
 }
 
+/* Approved global typography and Modern navigation */
+:is(.layout-desktop,.layout-mobile) #itemDetailPage .sectionTitle,
+:is(.layout-desktop,.layout-mobile) #itemDetailPage .sectionTitleTextButton {
+    font-size: 2rem !important;
+    font-weight: 750 !important;
+    letter-spacing: -.045em !important;
+    line-height: 1.1 !important;
+}
+.layout-desktop .cardText-first,
+.layout-desktop .cardText:not(.cardText-secondary) {
+    font-size: 1.2rem !important;
+    font-weight: 650 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -.025em !important;
+    color: rgba(255,255,255,.96) !important;
+}
+.layout-mobile .cardText-first,
+.layout-mobile .cardText:not(.cardText-secondary) {
+    font-size: 1.05rem !important;
+    font-weight: 650 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -.025em !important;
+    color: rgba(255,255,255,.96) !important;
+}
+:is(.layout-desktop,.layout-mobile) .cardText-secondary {
+    font-size: .95rem !important;
+    font-weight: 450 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.35 !important;
+    color: rgba(255,255,255,.62) !important;
+}
+@media (min-width:900px) {
+    .layout-desktop:not(.dashboardDocument) .MuiAppBar-root .MuiToolbar-root {
+        min-height: 3.75rem !important;
+        gap: .3rem !important;
+        padding-left: 1rem !important;
+        padding-right: .75rem !important;
+    }
+    .layout-desktop:not(.dashboardDocument) .MuiAppBar-root a,
+    .layout-desktop:not(.dashboardDocument) .MuiAppBar-root button {
+        font-size: 1.05rem !important;
+        font-weight: 650 !important;
+        letter-spacing: -.02em !important;
+        color: rgba(255,255,255,.92) !important;
+    }
+    .layout-desktop:not(.dashboardDocument) .MuiAppBar-root a.MuiButton-sizeLarge[href="#/"] {
+        font-size: 1.5rem !important;
+        font-weight: 750 !important;
+    }
+}
 
 /* =========================================================
    Bundled from: Theme/ElegantFin-theme-eightmillion-episode-desktop.css
@@ -5773,6 +5823,93 @@ for extended styling, use the add-on */
 
 }
 
+/* Approved desktop movie hero — isolated from mobile and other item types */
+@media (min-width: 900px) {
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) > .detailLogo:not(.hide) {
+        top: 61vh !important;
+        left: 50% !important;
+        width: min(48vw, 48rem) !important;
+        height: 23vh !important;
+        margin: 0 !important;
+        transform: translate(-50%, -100%) !important;
+        background-position: center bottom !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .detailPageWrapperContainer {
+        position: relative !important;
+        top: -7vh !important;
+        margin-bottom: -7vh !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .detailRibbon {
+        transform: none !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .itemMiscInfo-primary {
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 1.1rem !important;
+        margin: 0 0 2rem !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        line-height: 1.2 !important;
+        letter-spacing: -.015em !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .mainDetailButtons {
+        justify-content: center !important;
+        align-items: center !important;
+        gap: .9rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .detailSectionContent {
+        display: block !important;
+        min-height: 0 !important;
+        width: 100% !important;
+        margin-top: .75rem !important;
+        padding: 0 !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .detailSectionContent .tagline {
+        width: 100% !important;
+        margin: 0 0 1.4rem !important;
+        font-size: 1.55rem !important;
+        font-weight: 550 !important;
+        line-height: 1.25 !important;
+        letter-spacing: -.025em !important;
+        font-style: italic !important;
+        text-align: center !important;
+        color: rgba(255,255,255,.98) !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .detailSectionContent .overview {
+        width: 100% !important;
+        margin: 0 0 1rem !important;
+        font-size: 1.15rem !important;
+        font-weight: 450 !important;
+        line-height: 1.5 !important;
+        letter-spacing: -.01em !important;
+        text-align: left !important;
+        color: rgba(255,255,255,.94) !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .itemDetailsGroup {
+        margin-top: 1.75rem !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .detailsGroupItem {
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .detailsGroupItem > .label {
+        font-weight: 650 !important;
+        color: rgba(255,255,255,.95) !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .detailsGroupItem > .focuscontainer-x {
+        font-weight: 500 !important;
+        color: rgba(255,255,255,.86) !important;
+    }
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) .trackSelections {
+        font-size: 1.05rem !important;
+        font-weight: 500 !important;
+        line-height: 1.3 !important;
+    }
+}
 
 /* =========================================================
    Bundled from: Theme/ElegantFin-theme-eightmillion-person.css
@@ -6432,6 +6569,16 @@ for extended styling, use the add-on */
     border-radius: .35rem !important;
 }
 
+/* Place season series-logo link above the infoWrapper click layer. */
+@media (min-width:900px) {
+    .layout-desktop #itemDetailPage:has(.btnPlaystate[data-type="Season"])
+    > .detailLogo.elegantfinClickableSeriesLogo {
+        position: relative !important;
+        z-index: 10 !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+}
 
 /* =========================================================
    Bundled from: Theme/ElegantFin-theme-eightmillion-layout.css
