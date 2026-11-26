@@ -48,11 +48,13 @@
     };
 
     const positionMore = () => {
-        const page = getPersonPage();
+        // Jellyfin's filmography sections need not live under
+        // .detailPageSecondaryContainer. Find the exact native Movies
+        // link instead of assuming the wrapper hierarchy.
+        const page = document.querySelector('#itemDetailPage:not(.hide)');
         if (!page) return;
 
-        const sections = page.querySelectorAll('.detailPageSecondaryContainer .verticalSection');
-        for (const section of sections) {
+        for (const section of page.querySelectorAll('.verticalSection')) {
             const heading = section.querySelector('.sectionTitle');
             if (heading?.textContent.trim() !== 'Movies') continue;
 
@@ -61,12 +63,18 @@
             ) || section.querySelector('a.' + MORE_CLASS);
             if (!link) continue;
 
-            link.classList.add(MORE_CLASS);
-            link.removeAttribute('style');
-            const button = link.querySelector('button.more');
-            if (button) button.textContent = 'View all movies';
+            if (!link.classList.contains(MORE_CLASS)) {
+                link.classList.add(MORE_CLASS);
+            }
+            if (link.hasAttribute('style')) link.removeAttribute('style');
 
-            // Move the existing Jellyfin link instead of inventing a new route.
+            const button = link.querySelector('button.more');
+            if (button && button.textContent !== 'View all movies') {
+                button.textContent = 'View all movies';
+            }
+
+            // Only move when necessary. Avoid triggering the DOM observer
+            // repeatedly by re-appending an already placed element.
             if (link.parentElement !== section || link !== section.lastElementChild) {
                 section.appendChild(link);
             }
