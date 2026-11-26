@@ -6289,6 +6289,36 @@ for extended styling, use the add-on */
     }
 }
 
+/* Filmography link appears after the cards, not alongside the heading. */
+@media (min-width: 900px) {
+    .layout-desktop #itemDetailPage:has(.detailImageContainer .person)
+    .detailPageSecondaryContainer .verticalSection > a.elegantfinPersonFilmographyMore {
+        display: table !important;
+        width: fit-content !important;
+        margin: 1.5rem auto 0 !important;
+        padding: .65rem 2rem !important;
+        border: 1px solid rgba(255,255,255,.2) !important;
+        border-radius: .6rem !important;
+        background: rgba(255,255,255,.06) !important;
+        text-decoration: none !important;
+        color: rgba(255,255,255,.94) !important;
+    }
+    .layout-desktop #itemDetailPage:has(.detailImageContainer .person)
+    .detailPageSecondaryContainer .verticalSection > a.elegantfinPersonFilmographyMore:hover {
+        background: rgba(255,255,255,.12) !important;
+    }
+    .layout-desktop #itemDetailPage:has(.detailImageContainer .person)
+    .detailPageSecondaryContainer .verticalSection > a.elegantfinPersonFilmographyMore button.more {
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 1rem !important;
+        font-weight: 650 !important;
+        color: inherit !important;
+    }
+}
 
 /* =========================================================
    Bundled from: Theme/ElegantFin-theme-eightmillion-buttons.css
