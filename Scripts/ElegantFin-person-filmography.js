@@ -48,33 +48,32 @@
     };
 
     const positionMore = () => {
-        // Jellyfin's filmography sections need not live under
-        // .detailPageSecondaryContainer. Find the exact native Movies
-        // link instead of assuming the wrapper hierarchy.
-        const page = document.querySelector('#itemDetailPage:not(.hide)');
+        const page = getPersonPage();
         if (!page) return;
 
         for (const section of page.querySelectorAll('.verticalSection')) {
             const heading = section.querySelector('.sectionTitle');
-            if (heading?.textContent.trim() !== 'Movies') continue;
+            const type = heading?.textContent.trim();
+            if (!['Movies', 'Series', 'Episodes'].includes(type)) continue;
 
             const link = section.querySelector(
-                '.sectionTitleContainer a[href*="personId="][href*="type=Movie"]'
+                '.sectionTitleContainer a[href*="personId="]:has(button.more)'
             ) || section.querySelector('a.' + MORE_CLASS);
             if (!link) continue;
 
-            if (!link.classList.contains(MORE_CLASS)) {
-                link.classList.add(MORE_CLASS);
-            }
+            section.classList.add('elegantfinPersonFilmographySection');
+            section.classList.toggle(
+                'elegantfinPersonMovieSection', type === 'Movies'
+            );
+            link.classList.add(MORE_CLASS);
             if (link.hasAttribute('style')) link.removeAttribute('style');
 
             const button = link.querySelector('button.more');
-            if (button && button.textContent !== 'View all movies') {
-                button.textContent = 'View all movies';
+            const label = 'View all ' + type.toLowerCase();
+            if (button && button.textContent !== label) {
+                button.textContent = label;
             }
 
-            // Only move when necessary. Avoid triggering the DOM observer
-            // repeatedly by re-appending an already placed element.
             if (link.parentElement !== section || link !== section.lastElementChild) {
                 section.appendChild(link);
             }
