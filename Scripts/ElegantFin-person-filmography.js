@@ -24,7 +24,7 @@
 
         const original = client.getItems;
         const enhanced = function (userId, options, ...rest) {
-            if (options && typeof options === 'object' && getPersonPage()) {
+            if (options && typeof options === 'object') {
                 const personIds = options.PersonIds ?? options.personIds;
                 const types = options.IncludeItemTypes ?? options.includeItemTypes;
                 const limit = options.Limit ?? options.limit;
