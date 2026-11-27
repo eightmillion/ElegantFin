@@ -985,3 +985,20 @@
         margin-bottom: .75rem !important;
     }
 }
+
+/* Series synopsis: retain ElegantFin's arrow, not the raw black text. */
+@media (min-width: 900px) {
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .overview-expand {
+        font-size: 0 !important;
+        color: transparent !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Series"])
+    .overview-expand::after {
+        font-size: 16px !important;
+        color: #fff !important;
+    }
+}
