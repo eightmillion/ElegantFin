@@ -10,7 +10,7 @@
         if (!page?.querySelector('.btnPlaystate[data-type="Series"]')) return null;
 
         const overview = page.querySelector('.detailSectionContent .overview');
-        const button = page.querySelector('.detailSectionContent .overview-expand');
+        const button = page.querySelector('.overview-expand');
         if (!overview || !button) return null;
 
         return { overview, button };
