@@ -1,0 +1,55 @@
+/* =========================================================
+   Live TV guide — compact rows + artwork compatibility
+   ========================================================= */
+
+:root {
+    --custom-guide-row-height: 80px;
+    --custom-guide-row-gap: 4px;
+}
+
+/* Keep channel headers and program rows locked to the same geometry. */
+.channelPrograms,
+.channelPrograms-tv {
+    height: var(--custom-guide-row-height) !important;
+    min-height: var(--custom-guide-row-height) !important;
+}
+
+.guide-channelHeaderCell,
+.guide-channelHeaderCell-tv {
+    height:
+        calc(
+            var(--custom-guide-row-height)
+            - (var(--custom-guide-row-gap) * 2)
+        ) !important;
+    min-height:
+        calc(
+            var(--custom-guide-row-height)
+            - (var(--custom-guide-row-gap) * 2)
+        ) !important;
+    margin-top: var(--custom-guide-row-gap) !important;
+    margin-bottom: var(--custom-guide-row-gap) !important;
+    box-sizing: border-box !important;
+}
+
+/* Jellyfin positions program cells with top/bottom offsets inside each row. */
+.programCell {
+    top: var(--custom-guide-row-gap) !important;
+    bottom: var(--custom-guide-row-gap) !important;
+    box-sizing: border-box !important;
+}
+
+/* Artwork injected by Scripts/ElegantFin-guide-art.js. */
+.programCell.jfGuideArt {
+    isolation: isolate !important;
+    overflow: hidden !important;
+}
+
+.programCell.jfGuideArt .guideProgramName,
+.programCell.jfGuideArt .guideProgramNameText {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.programCell.jfGuideArt .guideProgramNameText {
+    text-shadow: 0 1px 3px rgba(0,0,0,.95) !important;
+}

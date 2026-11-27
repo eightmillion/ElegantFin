@@ -1,0 +1,1506 @@
+/* ===== TEST CANARY (TOP) ===== */
+html::before {
+    content: "EF TEST 2 - MOBILE CORE TOP";
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 2147483647 !important;
+    padding: 6px 10px !important;
+    background: #ff00ff !important;
+    color: #000 !important;
+    font: 700 12px/1.2 sans-serif !important;
+    pointer-events: none !important;
+}
+
+/* ===== Theme/ElegantFin-theme-eightmillion-base.css ===== */
+:root {
+    /* Gradient points */
+    --darkerGradientPoint: hsla(0, 0%, 0%, 1);
+    --darkerGradientPointAlpha: hsla(0, 0%, 0%, 0.85);
+
+    --lighterGradientPoint: hsla(0, 0%, 7%, 1);
+    --lighterGradientPointAlpha: hsla(0, 0%, 7%, 0.85);
+
+    /* Header / drawer */
+    --headerColor: hsla(0, 0%, 7%, 0.8);
+    --drawerColor: hsla(0, 0%, 7%, 0.9);
+
+    --headerColorGradient:
+        linear-gradient(
+            180deg,
+            hsla(0, 0%, 7%, 0.95) 30%,
+            55%,
+            transparent 90%
+        );
+
+    /* Borders */
+    --borderColor: hsla(0, 0%, 32%, 0);
+    --darkerBorderColor: hsla(0, 0%, 22%, 1);
+    --lighterBorderColor: hsla(0, 0%, 100%, 0.2);
+
+    /* Selectors */
+    --selectorBackgroundColor: hsla(0, 0%, 27%, 1);
+    --selectorBackgroundColorAlpha: hsla(0, 0%, 27%, 0.5);
+
+    /* Buttons */
+    --btnMiniPlayColor: hsla(0, 0%, 0%, 0.8);
+    --btnMiniPlayBorderColor: hsla(0, 0%, 30%, 0.8);
+
+    --dimTextColor: #d1d1d1;
+}
+
+.visualCardBox {
+    border-radius: 0 !important;
+}
+
+.visualCardBox,
+.paperList {
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+.layout-mobile .cardScalable,
+.cardScalable {
+    border: none !important;
+}
+
+.cardScalable {
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.section0 > .emby-scroller > .itemsContainer > .card {
+    --effectiveWidth: calc((139vw - (var(--sidePadding) * 2)));
+}
+
+.itemDetailsGroup {
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.detail-clamp-text {
+    font-size: 1.1em;
+}
+
+.trackSelections {
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0.4em !important;
+    background-color: transparent !important;
+}
+
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea {
+    background-color: #212121 !important;
+}
+
+.commentsSection {
+    padding-left: var(--sidePadding) !important;
+}
+
+.commentsSection > button,
+.commentsSection > div > button {
+    background-color: var(--textColor) !important;
+    color: black !important;
+    border-radius: var(--smallRadius) !important;
+    border-color: var(--borderColor) !important;
+    height: 3em !important;
+    min-width: 10em !important;
+    margin-right: .5em !important;
+    flex-direction: row !important;
+}
+
+.commentsSection > div > textarea {
+    width: calc(100% - var(--sidePadding)) !important;
+}
+
+.layout-mobile .itemBackdrop {
+    height: 70vh !important;
+}
+
+.layout-mobile .detailLogo {
+    top: 68vh !important;
+}
+
+.commentsDisplay {
+    padding-right: var(--sidePadding) !important;
+}
+
+.listItemImage {
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+/* .detailRibbon:has(.portraitCard .folder) {
+    min-height: unset !important;
+} */
+
+.emby-select-withcolor,
+.emby-select,
+.emby-input,
+.emby-textarea {
+    border-radius: unset !important;
+}
+
+.layout-mobile .detailImageContainer .card {
+    margin-top: -550% !important;
+}
+
+.layout-mobile .card {
+   /* --cardWidth: 20vw!important; */
+}
+
+.sectionTabs .emby-tab-button {
+    --largeRadius: 4px;
+}
+
+.btnPlay.detailButton {
+    border-radius: var(--smallRadius);
+}
+
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator,
+.playedIndicator {
+    background: #333;
+    color: #fff !important;
+}
+
+.starIcon {
+    background: radial-gradient(circle, #ffd700 0%, #ffed4e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: -.125em;
+    transform: translateY(-.02em);
+}
+
+.listItemImageButton {
+    --playButtonMargin: .6em;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: var(--playButtonMargin);
+    margin-right: var(--playButtonMargin);
+    font-size: 100%;
+}
+
+/* =========================================================
+   Jellyfin 12 Modern desktop app bar
+   ========================================================= */
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root.MuiAppBar-positionFixed {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    overflow: visible !important;
+    z-index: 1100 !important;
+}
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root .MuiToolbar-root {
+    position: relative;
+    min-height: 3.4em;
+    padding-left: .75em;
+    padding-right: .25em !important;
+    gap: .15em;
+}
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root {
+    color: rgba(255,255,255,.78) !important;
+}
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root a,
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root button {
+    color: rgba(255,255,255,.78) !important;
+    border-radius: .7em;
+    transition:
+        background-color .18s ease,
+        color .18s ease,
+        transform .18s ease;
+}
+
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root a:hover,
+.layout-desktop:not(.dashboardDocument) .MuiAppBar-root button:hover {
+    color: rgba(255,255,255,.95) !important;
+    background: rgba(255,255,255,.08) !important;
+}
+
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root a.MuiButton-textPrimary.MuiButton-colorPrimary {
+    background: rgba(255,255,255,.07) !important;
+    color: rgba(255,255,255,.95) !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root a.MuiButton-sizeLarge[href="#/"] {
+    color: rgba(255,255,255,.95) !important;
+    font-size: 1.4em !important;
+    font-weight: 700 !important;
+    letter-spacing: .015em;
+    margin-right: .9em !important;
+}
+
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root .MuiToolbar-root > :last-child {
+    margin-right: 0 !important;
+}
+
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root .MuiToolbar-root > :last-child button,
+.layout-desktop:not(.dashboardDocument)
+.MuiAppBar-root .MuiToolbar-root > :last-child .MuiIconButton-root {
+    padding: .25em !important;
+}
+
+.layout-desktop:not(.dashboardDocument) .mainAnimatedPage {
+    padding-top: .6em;
+}
+
+/* Let detail-page backdrops extend underneath the fixed Modern desktop app bar. */
+.layout-desktop body.libraryDocument:has(.itemDetailPage) main {
+    margin-top: -53px !important;
+    padding-top: 53px !important;
+}
+
+/* Continuous fade behind Modern desktop navigation. */
+.layout-desktop body.libraryDocument::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8em;
+    z-index: 1099;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.68) 0%,
+        rgba(0,0,0,.50) 30%,
+        rgba(0,0,0,.25) 58%,
+        rgba(0,0,0,.08) 78%,
+        transparent 100%
+    );
+}
+
+/* ===== Theme/ElegantFin-theme-eightmillion-episode-desktop.css ===== */
+/* =========================================================
+   Episode detail redesign — desktop only
+   ========================================================= */
+
+@media (min-width: 900px) {
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"]) {
+        --episode-hero-gap: clamp(2.5rem, 4vw, 4.5rem);
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContainer {
+        display: grid !important;
+        grid-template-columns:
+            minmax(360px, 44%)
+            minmax(0, 1fr) !important;
+        align-items: center !important;
+        justify-content: normal !important;
+        gap: var(--episode-hero-gap) !important;
+        width: calc(100vw - (var(--sidePadding) * 2)) !important;
+        max-width: none !important;
+        margin: clamp(1.5rem, 3vh, 3rem) auto 2rem !important;
+        padding: 0 !important;
+        text-align: left !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContainer > .detailImageContainer,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailImageContainer .backdropCard {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailImageContainer .cardBox {
+        overflow: hidden;
+        border-radius: 1em;
+        box-shadow: 0 1.2em 3em rgba(0,0,0,.35);
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailRibbon {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        background: transparent !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailRibbon .infoWrapper,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer {
+        gap: .35rem !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer > h1.parentName {
+        align-self: flex-start !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        font-weight: 600 !important;
+        text-align: left !important;
+        color: rgba(255,255,255,.72) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer > h1.parentName a {
+        color: inherit !important;
+        font-weight: inherit !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer > h3.itemName {
+        align-self: flex-start !important;
+        width: 100% !important;
+        margin: 0 0 1.35rem !important;
+        padding: 0 !important;
+        font-size: clamp(2rem, 2.7vw, 2.9rem) !important;
+        line-height: 1.1 !important;
+        font-weight: 450 !important;
+        text-align: left !important;
+        color: rgba(255,255,255,.96) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer > h3.itemName a {
+        color: rgba(255,255,255,.78) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .itemMiscInfo-primary {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        margin: 0 0 1rem !important;
+        padding: 0 !important;
+        text-align: left !important;
+        color: rgba(255,255,255,.70) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .mainDetailButtons {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .mainDetailButtons .detailButton {
+        border-radius: .75em !important;
+    }
+
+    /* Lower content is a child of the hero grid; span both columns. */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContent {
+        grid-column: 1 / -1 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        flex: none !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 0 5rem !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailSection {
+        display: grid !important;
+        grid-template-columns:
+            minmax(360px, 44%)
+            minmax(0, 1fr) !important;
+        grid-template-rows: auto auto !important;
+        column-gap: var(--episode-hero-gap) !important;
+        row-gap: 1.25rem !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: start !important;
+        box-sizing: border-box !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailSectionContent {
+        grid-column: 1 !important;
+        grid-row: 1 / span 2 !important;
+        order: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-self: start !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailSectionContent .overview {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 1rem !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        -webkit-line-clamp: unset !important;
+        font-size: 1.05rem !important;
+        line-height: 1.65 !important;
+        color: rgba(255,255,255,.82) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .itemExternalLinks {
+        margin: 1rem 0 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .trackSelections {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        order: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: .65rem !important;
+        align-self: start !important;
+        justify-self: stretch !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .trackSelections .trackSelectionFieldContainer {
+        display: flex !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .trackSelections .emby-select {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        text-overflow: ellipsis;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .itemDetailsGroup {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+        order: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        margin: .5rem 0 0 !important;
+        padding: 0 !important;
+        justify-self: stretch !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .itemDetailsGroup > div {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailsGroupItem {
+        display: grid !important;
+        grid-template-columns: 7rem minmax(0, 1fr) !important;
+        align-items: baseline !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 1rem;
+        margin: 0 !important;
+        padding: .45rem 0 !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailsGroupItem .label {
+        margin: 0 !important;
+        font-size: .9rem !important;
+        font-weight: 600 !important;
+        color: rgba(255,255,255,.58) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailsGroupItem .focuscontainer-x {
+        min-width: 0 !important;
+        text-align: left !important;
+        color: rgba(255,255,255,.78) !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .recordingFields.hide,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nextUpSection.hide,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    #listChildrenCollapsible.hide,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .programGuideSection.hide,
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .collectionItems.hide {
+        display: none !important;
+    }
+
+    /* Use Jellyfin's existing series logo when available. */
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer {
+        anchor-name: --episode-name;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"]):has(> .detailLogo[style*="url("])
+    .nameContainer {
+        padding-top: 3rem !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    > .detailLogo[style*="url("] {
+        display: block !important;
+        position: absolute !important;
+        position-anchor: --episode-name;
+        left: anchor(left) !important;
+        top: calc(anchor(top) + 2rem) !important;
+        width: 22rem !important;
+        max-width: 100% !important;
+        height: 5rem !important;
+        margin: 0 !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: left center !important;
+        z-index: 2;
+    }
+
+    .layout-desktop
+    #itemDetailPage:has(> .detailLogo[style*="url("])
+    .nameContainer > h1.parentName {
+        display: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage:not(:has(> .detailLogo[style*="url("]))
+    .nameContainer > h1.parentName {
+        display: block !important;
+    }
+}
+
+/* ===== Theme/ElegantFin-theme-eightmillion-mobile.css ===== */
+/* =========================================================
+   Jellyfin 12 Modern mobile app bar
+   ========================================================= */
+
+@media (max-width: 899px) {
+    .layout-mobile .MuiAppBar-root {
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, .72) 0%,
+            rgba(0, 0, 0, .48) 55%,
+            rgba(0, 0, 0, .16) 85%,
+            transparent 100%
+        ) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important;
+        border-bottom: none !important;
+    }
+}
+
+/* =========================================================
+   Episode detail — mobile redesign
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"]) {
+        --episode-mobile-width: min(92vw, 42rem);
+    }
+
+    /* Backdrop */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .itemBackdrop {
+        height: clamp(7rem, 18vh, 10rem) !important;
+    }
+
+    /* Primary / hero area */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContainer {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailRibbon {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: var(--episode-mobile-width) !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: transparent !important;
+        text-align: left !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailRibbon .infoWrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        text-align: left !important;
+    }
+
+    /* Episode still */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContainer > .detailImageContainer.hide-mobile {
+        display: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer.hide-desktop.hide-tv {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: none !important;
+        aspect-ratio: 16 / 9 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 0 1rem !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        anchor-name: --mobile-episode-image;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer.hide-desktop.hide-tv > .card {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer .backdropCard,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer .cardBox,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer .cardScalable {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer .cardBox,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer .cardScalable {
+        height: 100% !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer .cardScalable {
+        aspect-ratio: 16 / 9 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .infoWrapper > .detailImageContainer .cardBox {
+        overflow: hidden !important;
+        border-radius: 1rem !important;
+        box-shadow: 0 1rem 2.5rem rgba(0,0,0,.4) !important;
+    }
+
+    /* Series logo */
+    .layout-mobile
+    #itemDetailPage
+    > .detailLogo[style*="url("] {
+        display: block !important;
+        position: absolute !important;
+        position-anchor: --mobile-episode-image;
+        left: anchor(left) !important;
+        top: calc(anchor(bottom) + 2.25rem) !important;
+        width: 14rem !important;
+        max-width: 65vw !important;
+        height: 3.75rem !important;
+        margin: 0 !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: left center !important;
+        transform: none !important;
+        translate: none !important;
+        z-index: 4 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(> .detailLogo[style*="url("])
+    .nameContainer {
+        padding-top: 5.75rem !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(> .detailLogo[style*="url("])
+    .nameContainer > .parentName {
+        display: none !important;
+    }
+
+    /* Title */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        gap: .35rem !important;
+        transform: none !important;
+        text-align: left !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:not(:has(> .detailLogo[style*="url("]))
+    .nameContainer > .parentName {
+        display: block !important;
+        width: auto !important;
+        margin: 0 0 .25rem !important;
+        padding: 0 !important;
+        font-size: 1.15rem !important;
+        line-height: 1.2 !important;
+        font-weight: 650 !important;
+        color: rgba(255,255,255,.60) !important;
+        text-align: left !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .nameContainer > .itemName {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 1rem !important;
+        padding: 0 !important;
+        font-size: clamp(1.8rem, 7vw, 2.35rem) !important;
+        line-height: 1.08 !important;
+        font-weight: 550 !important;
+        color: rgba(255,255,255,.96) !important;
+        text-align: left !important;
+    }
+
+    /* Metadata */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .itemMiscInfo-primary {
+        display: flex !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        margin: 0 0 1.15rem !important;
+        padding: 0 !important;
+        transform: none !important;
+        text-align: left !important;
+    }
+
+    /* Buttons */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .mainDetailButtons {
+        display: flex !important;
+        position: static !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .mainDetailButtons .detailButton {
+        border-radius: .8rem !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .mainDetailButtons .btnPlay {
+        min-width: 9.5rem !important;
+    }
+
+    /* Lower content */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailPagePrimaryContent {
+        width: var(--episode-mobile-width) !important;
+        max-width: none !important;
+        margin: 1.5rem auto 0 !important;
+        padding: 0 0 4rem !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailSection {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: none !important;
+        gap: 1.25rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Synopsis */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailSectionContent {
+        order: 1 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailSectionContent .overview {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        color: rgba(255,255,255,.82) !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        -webkit-line-clamp: unset !important;
+    }
+
+    /* Credits / details */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .itemDetailsGroup {
+        order: 2 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: .35rem 1rem !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+        border-radius: .9rem !important;
+        background: rgba(255,255,255,.035) !important;
+        box-shadow: none !important;
+        box-sizing: border-box !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailsGroupItem {
+        display: grid !important;
+        grid-template-columns: 6rem minmax(0,1fr) !important;
+        width: 100% !important;
+        gap: .75rem !important;
+        margin: 0 !important;
+        padding: .65rem 0 !important;
+        align-items: baseline !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .detailsGroupItem .focuscontainer-x {
+        min-width: 0 !important;
+        text-align: left !important;
+    }
+
+    /* Video / audio / subtitles */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .trackSelections {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: none !important;
+        gap: .65rem !important;
+        margin: 0 !important;
+        padding: 1rem !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+        border-radius: .9rem !important;
+        background: rgba(255,255,255,.035) !important;
+        box-sizing: border-box !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .trackSelectionFieldContainer,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Episode"])
+    .trackSelections .emby-select {
+        width: 100% !important;
+        max-width: none !important;
+    }
+}
+
+/* ===== Theme/ElegantFin-theme-eightmillion-movie.css ===== */
+/* =========================================================
+   Movie detail — mobile redesign
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"]) {
+        --movie-logo-height: 15rem;
+        --movie-logo-reserve: 0rem;
+        --movie-logo-gap: 0rem;
+    }
+
+    /*
+       Let the backdrop behave like a full hero: extend it behind
+       the transparent app bar, keep it visible through the upper
+       half of the page, then fade it out near the bottom.
+    */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .itemBackdrop {
+        margin-top: -48px !important;
+        height: calc(clamp(26rem, 62vh, 34rem) + 48px) !important;
+        -webkit-mask:
+            linear-gradient(
+                to bottom,
+                #000 0%,
+                #000 78%,
+                rgba(0,0,0,.75) 88%,
+                transparent 100%
+            ) !important;
+        mask:
+            linear-gradient(
+                to bottom,
+                #000 0%,
+                #000 78%,
+                rgba(0,0,0,.75) 88%,
+                transparent 100%
+            ) !important;
+    }
+
+    /* Center movie logos and place them higher in the hero. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    > .detailLogo[style*="url("] {
+        top: 34vh !important;
+        left: 50% !important;
+        right: auto !important;
+        width: 24rem !important;
+        max-width: 96vw !important;
+        height: var(--movie-logo-height) !important;
+        margin: 0 !important;
+        transform: translateX(-50%) !important;
+        translate: none !important;
+        background-position: center !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+
+    /* Keep normal page flow tight underneath the clear logo. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"]):has(
+        > .detailLogo[style*="url("]
+    )
+    .nameContainer {
+        padding-top: calc(var(--movie-logo-reserve) + var(--movie-logo-gap)) !important;
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        gap: 0 !important;
+    }
+
+    /* Do not show Jellyfin's text title underneath a real logo. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"]):has(
+        > .detailLogo[style*="url("]
+    )
+    .nameContainer > .itemName,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"]):has(
+        > .detailLogo[style*="url("]
+    )
+    .nameContainer > .parentName {
+        display: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .itemMiscInfo-primary {
+        margin-top: 0 !important;
+    }
+
+    /* Movie action layout. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .mainDetailButtons {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: .45rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .mainDetailButtons .btnPlay {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 3.2rem !important;
+        margin: 1rem 0 .25rem !important;
+        padding: 0 1rem !important;
+        border-radius: .7rem !important;
+        border: 1px solid rgba(255,255,255,.14) !important;
+        background: rgba(255,255,255,.08) !important;
+        color: rgba(255,255,255,.95) !important;
+        box-shadow: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .mainDetailButtons > :not(.btnPlay) {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        width: auto !important;
+        justify-content: center !important;
+        margin: 0 !important;
+    }
+
+    /* ---------------------------------------------------------
+       Lower movie details — single-column mobile flow
+       --------------------------------------------------------- */
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailPagePrimaryContent {
+        width: min(92vw, 42rem) !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailSection {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: none !important;
+        gap: .75rem !important;
+        margin: 0 0 1rem !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailSectionContent {
+        order: 1 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailSectionContent .overview {
+        margin: 0 0 .6rem !important;
+        line-height: 1.55 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .itemExternalLinks {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: .45rem !important;
+        width: 100% !important;
+        margin: .1rem 0 .15rem !important;
+        padding: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .itemDetailsGroup {
+        order: 2 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: .25rem .9rem !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+        border-radius: .9rem !important;
+        background: rgba(255,255,255,.035) !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem {
+        display: grid !important;
+        grid-template-columns: 6rem minmax(0, 1fr) !important;
+        align-items: start !important;
+        width: 100% !important;
+        gap: .7rem !important;
+        margin: 0 !important;
+        padding: .5rem 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem > .label {
+        min-width: 0 !important;
+        flex-basis: auto !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem > .focuscontainer-x {
+        display: block !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+        white-space: normal !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailsGroupItem > .focuscontainer-x a {
+        display: inline !important;
+        width: auto !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        line-height: inherit !important;
+        text-align: inherit !important;
+        white-space: normal !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelections {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        gap: .6rem !important;
+        margin: 0 !important;
+        padding: .85rem !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+        border-radius: .9rem !important;
+        background: rgba(255,255,255,.035) !important;
+        box-shadow: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelectionFieldContainer,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelections .selectContainer,
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelections .emby-select {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .trackSelections .emby-select {
+        text-overflow: ellipsis !important;
+    }
+
+    /* Preserve Jellyfin's hidden-state behavior after forcing the layout. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    :is(
+        .trackSelections.hide,
+        .recordingFields.hide,
+        .nextUpSection.hide,
+        #listChildrenCollapsible.hide,
+        .programGuideSection.hide,
+        .collectionItems.hide
+    ) {
+        display: none !important;
+    }
+
+}
+
+/* ===== Theme/ElegantFin-theme-eightmillion-buttons.css ===== */
+/* =========================================================
+   Detail-page action buttons
+   Mobile uses the movie-page stacked layout; desktop keeps
+   its existing geometry and only shares the visual styling.
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+    .layout-mobile
+    #itemDetailPage:has(.mainDetailButtons)
+    .detailRibbon
+    .mainDetailButtons {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        width: 100% !important;
+        gap: .65rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        justify-content: normal !important;
+        align-items: center !important;
+        transform: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.mainDetailButtons)
+    .detailRibbon
+    .mainDetailButtons
+    .detailButton.btnPlay {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 3.2rem !important;
+        margin: 1rem 0 .25rem !important;
+        padding: 0 1rem !important;
+        border: 1px solid rgba(255,255,255,.14) !important;
+        border-radius: .7rem !important;
+        background: rgba(255,255,255,.08) !important;
+        color: rgba(255,255,255,.95) !important;
+        box-shadow: none !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.mainDetailButtons)
+    .detailRibbon
+    .mainDetailButtons
+    > :not(.btnPlay) {
+        justify-self: center !important;
+        margin: 0 !important;
+    }
+
+    /* Movies expose five secondary action buttons on mobile.
+       Keep them on one row beneath Play/Resume. */
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailRibbon
+    .mainDetailButtons {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        column-gap: .35rem !important;
+    }
+
+    .layout-mobile
+    #itemDetailPage:has(.btnPlaystate[data-type="Movie"])
+    .detailRibbon
+    .mainDetailButtons
+    > :not(.btnPlay) {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+        justify-content: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+}
+
+@media (min-width: 900px) {
+
+    /* Keep the established desktop detail-page layout intact. */
+    .layout-desktop
+    #itemDetailPage
+    .mainDetailButtons {
+        display: flex !important;
+        grid-template-columns: none !important;
+        width: auto !important;
+        max-width: 100% !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: .65rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Same dark Play / Resume treatment used by mobile movies. */
+    .layout-desktop
+    #itemDetailPage
+    .mainDetailButtons
+    .detailButton.btnPlay {
+        grid-column: auto !important;
+        width: auto !important;
+        min-width: 10rem !important;
+        height: 3.2rem !important;
+        margin: 0 !important;
+        padding: 0 1.4rem !important;
+        border: 1px solid rgba(255,255,255,.14) !important;
+        border-radius: .7rem !important;
+        background: rgba(255,255,255,.08) !important;
+        color: rgba(255,255,255,.95) !important;
+        box-shadow: none !important;
+    }
+
+    .layout-desktop
+    #itemDetailPage
+    .mainDetailButtons
+    > :not(.btnPlay) {
+        justify-self: auto !important;
+        margin: 0 !important;
+    }
+}
+
+/* ===== TEST CANARY (BOTTOM) ===== */
+html::after {
+    content: "EF TEST 2 - MOBILE CORE BOTTOM";
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 2147483647 !important;
+    padding: 6px 10px !important;
+    background: #00ffff !important;
+    color: #000 !important;
+    font: 700 12px/1.2 sans-serif !important;
+    pointer-events: none !important;
+}

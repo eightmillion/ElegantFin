@@ -1,0 +1,199 @@
+/* =========================================================
+   Home / library-page polish
+   Keep these rules scoped away from TV so focus-navigation
+   layouts retain the upstream ElegantFin/Jellyfin behavior.
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    /*
+       The custom compact Modern app bar leaves legacy home-tab
+       content too high, causing headings such as "My Media" to
+       render underneath the fixed navigation.
+    */
+    .layout-desktop #homeTab,
+    .layout-desktop #favoritesTab {
+        padding-top: 3.25rem !important;
+    }
+
+    /*
+       Jellyfin 12 renders LibraryToolbar as the second direct
+       MuiToolbar child of the fixed app bar. Give those controls
+       the same neutral dark treatment as our detail-page buttons.
+    */
+    .layout-desktop:not(.dashboardDocument)
+    .MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root {
+        min-height: 3.4rem !important;
+        padding-top: .35rem !important;
+        padding-bottom: .45rem !important;
+        column-gap: .5rem !important;
+        row-gap: .4rem !important;
+    }
+
+    .layout-desktop:not(.dashboardDocument)
+    .MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+    .MuiButtonGroup-root {
+        display: flex !important;
+        gap: .45rem !important;
+        box-shadow: none !important;
+    }
+
+    .layout-desktop:not(.dashboardDocument)
+    .MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+    .MuiButtonGroup-root .MuiButton-root {
+        min-width: 2.65rem !important;
+        min-height: 2.65rem !important;
+        margin: 0 !important;
+        padding: .45rem .8rem !important;
+        border: 1px solid rgba(255,255,255,.14) !important;
+        border-radius: .7rem !important;
+        background: rgba(255,255,255,.06) !important;
+        color: rgba(255,255,255,.92) !important;
+        box-shadow: none !important;
+        text-transform: none !important;
+    }
+
+    .layout-desktop:not(.dashboardDocument)
+    .MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+    .MuiButtonGroup-contained .MuiButton-root {
+        background: rgba(255,255,255,.10) !important;
+    }
+
+    .layout-desktop:not(.dashboardDocument)
+    .MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+    .MuiButtonGroup-root .MuiButton-root:hover {
+        background: rgba(255,255,255,.14) !important;
+        color: #fff !important;
+    }
+
+    .layout-desktop:not(.dashboardDocument)
+    .MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+    .MuiButtonGroup-root .MuiButton-root.Mui-disabled {
+        opacity: .35 !important;
+        background: rgba(255,255,255,.025) !important;
+        color: rgba(255,255,255,.6) !important;
+    }
+
+    /* Keep the item-count chip visually subordinate to the controls. */
+    .layout-desktop:not(.dashboardDocument)
+    .MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+    .MuiChip-root {
+        border: 1px solid rgba(255,255,255,.10) !important;
+        background: rgba(255,255,255,.045) !important;
+        color: rgba(255,255,255,.72) !important;
+        box-shadow: none !important;
+    }
+
+    /*
+       Jellyfin keeps the library controls fixed while scrolling.
+       Restore a translucent scrolled backing so the controls remain
+       readable over poster rows without losing the transparent-at-top look.
+    */
+    .layout-desktop:not(.dashboardDocument)
+    .MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorDefault:has(> .MuiToolbar-root + .MuiToolbar-root) {
+        background: rgba(10,10,10,.50) !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+        box-shadow:
+            0 1px 0 rgba(255,255,255,.08),
+            0 8px 24px rgba(0,0,0,.35) !important;
+    }
+}
+
+/* =========================================================
+   Mobile library toolbar
+   Trust Jellyfin's layout-mobile class rather than coupling
+   these structural rules to a viewport-width breakpoint.
+   ========================================================= */
+
+.layout-mobile:not(.dashboardDocument)
+.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+.MuiButtonGroup-root {
+    display: flex !important;
+    gap: .35rem !important;
+    box-shadow: none !important;
+}
+
+.layout-mobile:not(.dashboardDocument)
+.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+.MuiButtonGroup-root .MuiButton-root {
+    min-width: 2.55rem !important;
+    min-height: 2.55rem !important;
+    margin: 0 !important;
+    padding: .4rem .65rem !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    border-radius: .65rem !important;
+    background: rgba(255,255,255,.07) !important;
+    color: rgba(255,255,255,.92) !important;
+    box-shadow: none !important;
+}
+
+.layout-mobile:not(.dashboardDocument)
+.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+.MuiButtonGroup-contained .MuiButton-root {
+    background: rgba(255,255,255,.11) !important;
+    color: #fff !important;
+}
+
+.layout-mobile:not(.dashboardDocument)
+.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+.MuiButtonGroup-root .MuiButton-root:hover {
+    background: rgba(255,255,255,.16) !important;
+    color: #fff !important;
+}
+
+.layout-mobile:not(.dashboardDocument)
+.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root
+.MuiButton-root.Mui-disabled {
+    opacity: .35 !important;
+}
+
+/* Same scrolled glass backing used on desktop. */
+.layout-mobile:not(.dashboardDocument)
+.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorDefault:has(> .MuiToolbar-root + .MuiToolbar-root) {
+    background: rgba(10,10,10,.50) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,.08),
+        0 8px 24px rgba(0,0,0,.35) !important;
+}
+
+/* OffsetAppBar already reserves the fixed toolbar height; keep only a small visual gap. */
+.layout-mobile:not(.dashboardDocument)
+body:has(.MuiAppBar-root > .MuiToolbar-root + .MuiToolbar-root)
+.mainAnimatedPage {
+    padding-top: .75rem !important;
+}
+
+/* Glass treatment for the fixed alphabet picker on library lists. */
+.layout-mobile
+.alphaPicker-fixed-right > .MuiPaper-root {
+    background: rgba(10,10,10,.50) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border: 1px solid rgba(255,255,255,.08) !important;
+    border-radius: .7rem !important;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,.06),
+        0 8px 24px rgba(0,0,0,.30) !important;
+}
+
+.layout-mobile
+.alphaPicker-fixed-right .MuiToggleButton-root {
+    background: transparent !important;
+    color: rgba(255,255,255,.82) !important;
+    border: 0 !important;
+}
+
+.layout-mobile
+.alphaPicker-fixed-right .MuiToggleButton-root.Mui-selected {
+    background: rgba(255,255,255,.18) !important;
+    color: #fff !important;
+}
+
+.layout-mobile
+.alphaPicker-fixed-right .MuiToggleButton-root:hover {
+    background: rgba(255,255,255,.12) !important;
+    color: #fff !important;
+}
